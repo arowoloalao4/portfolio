@@ -1,24 +1,82 @@
-.project-cols {
-  border: 1px solid black;
-  border-radius: 3px;
-  height: 5em;
-  width: auto;
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  background-color: rgb(69, 68, 68);
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  /* Cool Grey */
+  color: #2a2a2a;
+  /* Dark Grey Text */
 }
 
-.heading3 {
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows the items to wrap as needed */
+  align-items: stretch;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #ffffff;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1,
+h3 {
   font-weight: bold;
+}
+
+hr.vertical-line {
+  border: none;
+  height: 3px;
+  background: #007BFF;
+  margin: 20px 0;
+}
+
+.projectCol {
+  background: #e6eaf0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  min-height: 7em;
+}
+
+.projectCol:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
 }
 
 .links {
-  color: white;
+  color: #007BFF;
   text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: color 0.3s;
 }
 
 .links:hover {
-  text-decoration: underline;
+  color: #0056b3;
+}
+
+.links::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #007BFF;
+  transition: width 0.3s;
+}
+
+.links:hover::after {
+  width: 100%;
+}
+
+.project-description {
+  font-size: 0.9em;
+  line-height: 1.4;
 }
