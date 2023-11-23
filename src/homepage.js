@@ -1,66 +1,216 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { MdLightMode } from "react-icons/md";
+import { MdOutlineNightlight } from "react-icons/md";
+import { MdOutlineMail } from "react-icons/md";
+import { FaLinkedin } from "react-icons/fa6";
+import { FaGithubSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
-
-const HomePage = () => {
-
-    const [myProjects, setMyProjects] = useState([
-        { name: 'Da-Manager: Pioneering Digital Solutions', url: 'https://da-manager.com' },
-        { name: 'Medillery: Empowering Designers, Enriching Society', url: 'https://medillery.com' },
-        { name: 'React Bookstore Application', url: 'https://bookstoreapp-389b8.web.app' },
-        { name: 'React Inventory Management', url: 'https://inventoryapp-5900c.web.app/' },
-        { name: 'React Todo App', url: 'https://mytodoapp-37742.web.app/' },
-        { name: 'React Xchange', url: 'https://xchangepage-a9c1b.web.app/' },
-        { name: 'EduSync Backend: Node.js Integration', url: 'https://github.com/Ollah16/reactSchoolAppBackEnd.git' },
-        { name: 'StockWise Backend: Node.js Foundation', url: 'https://github.com/Ollah16/inventoryBE.git' },
-        { name: 'InvoiceCraft: React Invoice Generator Website', url: 'https://github.com/Ollah16/Invoice_App.git' }
-    ]);
+import { FaCode } from "react-icons/fa";
+import { BiX } from "react-icons/bi";
+import { IoRadioButtonOffSharp } from "react-icons/io5";
+import { RiParenthesesLine } from "react-icons/ri";
 
 
-    return (
-        <Container className="p-5 body">
+const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
 
-            <Row className="mb-5">
-                <Col lg={12} md={12} sm={12} xs={12} className="text-center">
-                    <h1>Unveiling My Digital Craftsmanship</h1>
-                    <hr className="vertical-line me-2" />
-                    <p>
-                        Welcome, I'm Olaoluwa Oke - a passionate junior web developer, adept in Node.js and React.js.
-                        Through meticulous craftsmanship and dedication, I've weaved digital tapestries that resonate with users. My commitment is to architect solutions that are not just functional, but intuitively beautiful. Join me on this journey of pixels, patterns, and possibilities.
-                    </p>
-                </Col>
-            </Row>
+    let [introConst, setIntroConst] = useState('')
+    let [selfDescription, setDescription] = useState('')
+    let highLight = useRef()
 
-            <Row className="mb-5">
-                <Col lg={12} md={12} sm={12} xs={12} className="text-center">
-                    <h3>Highlights From My Portfolio</h3>
-                </Col>
+    const p = '> self.learnAboutMe( )\nPress enter to see what I am about.'
 
-                {myProjects.map((project, index) => (
-                    <Col lg={4} md={6} sm={12} xs={12} className="mb-3" key={index}>
-                        <div className="projectCol p-3">
-                            {project.name === 'Da-Manager' || project.name === 'Medillery' ?
-                                <a href={project.url} className="text-center d-block links mb-2">{project.name} - Where I Honed My Skills</a> :
-                                <Link className="text-center d-block links mb-2" to={project.url}>{project.name != 'Da-Manager: Pioneering Digital Solutions' && project.name != 'Medillery: Empowering Designers, Enriching Society' && <span>Repository:</span>} {project.name}</Link>
-                            }
-                            <p className="project-description">
-                                A glimpse of {project.name}. Here, you'll find the harmonious blend of technology and innovation that I've employed.
-                            </p>
-                        </div>
-                    </Col>
+    let myDesc = `
+    \n> self.currentLocation
+    "Leicester, UK"
+    \n> self.interests
+    ["database", "mysql", "sql server", "anime", "book"]
+    \n> self.education
+    "Engineering Management, 2022-2023, Agricultural Engineering, 2012-2020 && Udemy web development, 2019-2020"
+    \n> self.skills
+    ["HTML", "CSS", "Javascript", "React", "Node.js", "Bootstrap", "MySQL", "NoSQL", "Git"]
+    \n> self.contactMe( )
+    ["LinkedIn", "Github", "Twitter/X", "Instagram", "Discord", "Telegram", "Email"]`
+
+    useEffect(() => {
+        let i = 0;
+        let timeout;
+
+        const addChar = () => {
+            if (i < p.length) {
+
+                let a = (introConst += p[i]).slice(1)
+
+                setIntroConst(a);
+
+                i++;
+
+                timeout = setTimeout(addChar, 50);
+            }
+        };
+
+        addChar();
+
+        return (() => {
+            clearTimeout(timeout)
+        })
+
+    }, [p])
+
+    useEffect(() => {
+        document.addEventListener('keypress', handleDisplay);
+
+        return () => {
+            document.removeEventListener('keypress', handleDisplay);
+        };
+
+    }, [highLight]);
+
+    const handleDisplay = () => {
+
+        setIntroConst(p.replace(
+            'Press enter to see what I am about.',
+            'Loading . . .'
+        ));
+
+        for (let i = 0; i < myDesc.length; i++) {
+            setTimeout(() => {
+                setDescription(prev => prev += myDesc[i])
+            }, i * 50)
+        }
+    }
+
+    return (<Container fluid
+        className={mode === 'lightmode' ?
+            'homepage-lightmode' : 'homepage-darkmode'}>
+
+        <nav
+            className={mode === 'lightmode' ?
+                'navbar-lightmode' : 'navbar-darkmode'}>
+
+            <a href="/">Olaoluwa</a>
+            <hr></hr>
+
+            <section >
+                <div >
+                    <span className={dropdown ? 'dropdown-span' : 'span-links'}>
+                        <button
+                            className={mode === 'darkmode' ?
+                                'canceltogglebtn-darkmode' : 'btn-lightmode'}
+                            onClick={() => handleDropDown()}>
+                            <BiX size={32} />
+                        </button>
+
+                        <a href="/">Home</a>
+                        <a href="projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </span>
+
+                    <button className={mode === 'darkmode' ?
+                        'dark-mode-btn' : 'light-mode-btn'}
+                        onClick={() => handleBgMode()}
+                        data-name={mode === 'darkmode' ?
+                            'switch to light mode' :
+                            'switch to dark mode'}>
+
+                        {mode === 'darkmode' ?
+                            <MdLightMode size={25} />
+                            :
+                            <MdOutlineNightlight size={32} />}
+
+                    </button>
+                </div>
+
+                <div>
+                    <button onClick={() => handleDropDown()}
+                        className='togglebtn-darkmode'>
+                        <hr></hr>
+                        <hr></hr>
+                        <hr></hr>
+                    </button>
+                </div>
+            </section>
+        </nav >
+
+
+
+        <section className="about-section">
+            <div>
+                <img src={require(`${'./asset/photo.jpg'}`)} />
+            </div>
+            <div >
+                <h2>Hi, I'm Olaoluwa!</h2>
+                <p>Welcome to my portfolio website! I am a passionate web developer with expertise in HTML, CSS, JavaScript, React, and more. I love turning ideas into interactive and user-friendly websites. My commitment is to architect solutions that are not just functional, but intuitively beautiful.
+                </p>
+            </div>
+        </section>
+
+        <section className="scroll-section">
+            <div>
+                <span>
+                    <IoRadioButtonOffSharp className='radioone' size={13} />
+                    <IoRadioButtonOffSharp className='radiotwo' size={13} />
+                    <IoRadioButtonOffSharp className='radiothree me-0' size={13} />
+                </span>
+
+                <span className="d-flex align-items-center">self.Introduction <RiParenthesesLine size={20} />
+                </span>
+
+                <span></span>
+            </div>
+
+            <div style={{ whiteSpace: 'pre-line' }}>
+                {introConst.split('').map((char, index) => (
+                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' : 'normal'}`}>
+                        {char}
+                    </span>
                 ))}
 
-            </Row>
+                {selfDescription.split('').map((char, index) => (
+                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' : 'normal'}`}>
+                        {char}
+                    </span>
+                ))}
+            </div>
 
-            <Row className="mt-5">
-                <Col lg={12} md={12} sm={12} xs={12} className="text-center">
-                    <p>
-                        Ready to create something memorable? Let's bring that idea to life! Feel free to <a href="mailto:olah_oluh@outlook.com">email me directly</a>.
-                    </p>
-                </Col>
-            </Row>
 
-        </Container>
+
+
+
+        </section>
+
+
+
+        <section className="footer-section">
+            <div>
+                <FaCode size={19} className={mode === 'darkmode' ?
+                    "darkmode-link me-2" : 'lightmode-link'} />
+                Web Developer
+            </div>
+
+            <div>
+                <Link to={'mailto:olaoluwa_oke@outlook.com'}
+                    data-name="Email">
+                    <MdOutlineMail size={19} className={mode === 'darkmode' ?
+                        "darkmode-link" : 'lightmode-link'}
+                    />
+                </Link>
+
+                <Link to={'https://www.linkedin.com/in/olaoluwa-oke-478a7b298/'}
+                    data-name="Linkedln">
+                    <FaLinkedin size={19} className={mode === 'darkmode' ?
+                        "darkmode-link" : 'lightmode-link'} />
+                </Link>
+
+                <Link to={'https://github.com/Ollah16/'}
+                    data-name="GitHub">
+                    <FaGithubSquare size={19} className={mode === 'darkmode' ?
+                        "darkmode-link" : 'lightmode-link'} />
+                </Link>
+            </div>
+        </section>
+
+    </Container >
     )
 }
 export default HomePage;
