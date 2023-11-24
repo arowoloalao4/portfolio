@@ -10,13 +10,16 @@ import { FaCode } from "react-icons/fa";
 import { BiX } from "react-icons/bi";
 import { IoRadioButtonOffSharp } from "react-icons/io5";
 import { RiParenthesesLine } from "react-icons/ri";
+import useMode from "./custom-hook/useMode";
+import { GrMenu } from "react-icons/gr";
 
 
-const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
+const HomePage = ({ handleDropDown, dropdown }) => {
+
+    const [mode, handleMode] = useMode()
 
     let [introConst, setIntroConst] = useState('')
     let [selfDescription, setDescription] = useState('')
-    let highLight = useRef()
 
     const p = '> self.learnAboutMe( )\nPress enter to see what I am about.'
 
@@ -64,13 +67,13 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
             document.removeEventListener('keypress', handleDisplay);
         };
 
-    }, [highLight]);
+    }, []);
 
     const handleDisplay = () => {
 
         setIntroConst(p.replace(
             'Press enter to see what I am about.',
-            'Loading . . .'
+            'Loaded data . . .'
         ));
 
         for (let i = 0; i < myDesc.length; i++) {
@@ -89,44 +92,49 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
                 'navbar-lightmode' : 'navbar-darkmode'}>
 
             <a href="/">Olaoluwa</a>
-            <hr></hr>
 
             <section >
                 <div >
-                    <span className={dropdown ? 'dropdown-span' : 'span-links'}>
+                    <span className={dropdown ?
+                        mode === 'lightmode' ?
+                            'dropdown-lightmode' :
+                            'dropdown-darkmode' :
+                        'span-links'}>
                         <button
-                            className={mode === 'darkmode' ?
-                                'canceltogglebtn-darkmode' : 'btn-lightmode'}
+                            className={mode === 'lightmode' ?
+                                'canceltogglebtn-lightmode' : 'canceltogglebtn-darkmode'}
                             onClick={() => handleDropDown()}>
                             <BiX size={32} />
                         </button>
 
                         <a href="/">Home</a>
                         <a href="projects">Projects</a>
-                        <a href="#contact">Contact</a>
+                        <a href="/repos">Repositories</a>
                     </span>
 
-                    <button className={mode === 'darkmode' ?
-                        'dark-mode-btn' : 'light-mode-btn'}
-                        onClick={() => handleBgMode()}
-                        data-name={mode === 'darkmode' ?
-                            'switch to light mode' :
-                            'switch to dark mode'}>
 
-                        {mode === 'darkmode' ?
-                            <MdLightMode size={25} />
+                    <button className={mode === 'lightmode' ?
+                        'lightmode-btn' : 'darkmode-btn'}
+                        onClick={() => handleMode()}
+
+                        data-name={mode === 'lightmode' ?
+                            'switch to dark mode' :
+                            'switch to light mode'}>
+
+                        {mode === 'lightmode' ?
+                            <MdOutlineNightlight size={25} />
                             :
-                            <MdOutlineNightlight size={32} />}
+                            <MdLightMode size={25} />
+                        }
 
                     </button>
                 </div>
 
                 <div>
                     <button onClick={() => handleDropDown()}
-                        className='togglebtn-darkmode'>
-                        <hr></hr>
-                        <hr></hr>
-                        <hr></hr>
+                        className={mode === 'lightmode' ?
+                            'togglebtn-lightmode' : 'togglebtn-darkmode'}>
+                        <GrMenu size={25} />
                     </button>
                 </div>
             </section>
@@ -134,7 +142,8 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
 
 
 
-        <section className="about-section">
+        <section className={mode === 'lightmode' ?
+            'light-about-section' : 'dark-about-section'}>
             <div>
                 <img src={require(`${'./asset/photo.jpg'}`)} />
             </div>
@@ -145,7 +154,8 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
             </div>
         </section>
 
-        <section className="scroll-section">
+        <section className={mode === 'lightmode' ?
+            'selfIntro-lightmode-section' : 'selfIntro-darkmode-section'}>
             <div>
                 <span>
                     <IoRadioButtonOffSharp className='radioone' size={13} />
@@ -161,13 +171,15 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
 
             <div style={{ whiteSpace: 'pre-line' }}>
                 {introConst.split('').map((char, index) => (
-                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' : 'normal'}`}>
+                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' :
+                        mode === 'lightmode' ? 'normal-lightmode' : 'normal-darkmode'}`}>
                         {char}
                     </span>
                 ))}
 
                 {selfDescription.split('').map((char, index) => (
-                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' : 'normal'}`}>
+                    <span key={index} className={`selfintro-section ${char === '>' ? 'icon' :
+                        mode === 'lightmode' ? 'normal-lightmode' : 'normal-darkmode'}`}>
                         {char}
                     </span>
                 ))}
@@ -181,34 +193,35 @@ const HomePage = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
 
 
 
-        <section className="footer-section">
+        <section className={mode === 'lightmode' ?
+            'footer-lightmodesection' : 'footer-darkmodesection'}>
             <div>
-                <FaCode size={19} className={mode === 'darkmode' ?
-                    "darkmode-link me-2" : 'lightmode-link'} />
+                <FaCode size={19} className={mode === 'lightmode' ?
+                    "lightmode-link" : 'darkmode-link me-2'} />
                 Web Developer
             </div>
 
             <div>
                 <Link to={'mailto:olaoluwa_oke@outlook.com'}
                     data-name="Email">
-                    <MdOutlineMail size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'}
+                    <MdOutlineMail size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'}
                     />
                 </Link>
 
                 <Link to={'https://www.linkedin.com/in/olaoluwa-oke-478a7b298/'}
                     data-name="Linkedln">
-                    <FaLinkedin size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'} />
+                    <FaLinkedin size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'} />
                 </Link>
 
                 <Link to={'https://github.com/Ollah16/'}
                     data-name="GitHub">
-                    <FaGithubSquare size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'} />
+                    <FaGithubSquare size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'} />
                 </Link>
             </div>
-        </section>
+        </section >
 
     </Container >
     )

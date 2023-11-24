@@ -1,0 +1,705 @@
+.homepage-lightmode {
+    padding: 0 !important;
+    min-height: 100vh;
+    background-color: rgb(182, 178, 178);
+}
+
+.navbar-lightmode {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background-color: rgba(65, 66, 66, 0.6);
+    z-index: 100;
+    backdrop-filter: blur(6px);
+    height: 4em;
+}
+
+.navbar-lightmode a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    color: black;
+}
+
+.navbar-lightmode a[href='/']:first-child {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.navbar-lightmode section div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-lightmode section div:first-child a {
+    margin: 0 2rem;
+}
+
+.togglebtn-lightmode,
+.canceltogglebtn-lightmode,
+.navbar-lightmode section a:first-of-type {
+    display: none;
+}
+
+.lightmode-btn {
+    background-color: transparent;
+    transition: background-color ease-in-out .2s, color ease-in-out .2s;
+    margin: 0 2.5rem;
+    border: none;
+    border-radius: .4rem;
+    height: 2.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #0d171a;
+}
+
+.lightmode-btn:hover:before {
+    content: attr(data-name);
+    position: absolute;
+    bottom: -2em;
+    right: .6em;
+    background-color: #626264;
+    color: white;
+    padding: .1rem .3rem;
+    display: inline-block;
+    font-size: .9rem;
+    border-radius: .3125rem;
+
+}
+
+.lightmode-btn:hover {
+    background-color: #3b3b3c;
+    color: white
+}
+
+.navbar-lightmode a[href='/']:first-child {
+    font-size: 25px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+.navbar-lightmode section div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-lightmode section div:first-child a {
+    margin: 0 2rem;
+}
+
+.togglebtn-lightmode,
+.canceltogglebtn-lightmode,
+.navbar-lightmode section a:first-of-type {
+    display: none;
+}
+
+@media (max-width:768px) {
+
+    .navbar-lightmode section {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .togglebtn-lightmode,
+    .canceltogglebtn-lightmode,
+    .navbar-lightmode section a:first-of-type {
+        display: inline-block;
+    }
+
+    .togglebtn-lightmode {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: transparent;
+        border: none;
+        padding: .4rem;
+        color: black;
+        transition: background-color ease-in-out .2s, color ease-in-out .2s;
+        border-radius: .4rem;
+        border-radius: .3125rem;
+        font-size: .9rem;
+        height: 2.8rem;
+    }
+
+    .togglebtn-lightmode:hover {
+        background-color: #3b3b3c;
+        color: white;
+    }
+
+    .dropdown-lightmode {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        position: absolute;
+        background-color: rgba(38, 39, 39, 0.9);
+        z-index: 100;
+        backdrop-filter: blur(1.5rem);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 20rem;
+    }
+
+    .dropdown-lightmode a {
+        width: 100%;
+        text-align: center;
+        padding: .3em;
+        background-color: transparent;
+        text-decoration: none;
+        border-radius: .2em;
+        color: white;
+        transition: background-color ease-in-out 0.2s, text-decoration ease-in-out 0.2s;
+    }
+
+    .dropdown-lightmode a:hover {
+        text-decoration: underline;
+        background-color: rgba(233, 238, 243, 0.1);
+        margin: 0;
+    }
+
+    .dropdown-lightmode button {
+        align-self: flex-end;
+        background-color: transparent;
+        border: none;
+        border-radius: .4em;
+        padding: .2rem;
+        color: white;
+        margin: 0 2rem;
+        font-size: 1.2rem;
+        transition: background-color ease-in-out 0.2s;
+    }
+
+    .dropdown-lightmode button:hover {
+        background-color: rgba(248, 246, 249, 0.2);
+    }
+
+    .span-links {
+        display: none;
+    }
+
+}
+
+.light-about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+}
+
+.light-about-section div:first-of-type {
+    width: 23%;
+    height: 15rem;
+    margin: 0 .3rem;
+}
+
+.light-about-section div:last-of-type {
+    width: 40%;
+    margin: 0 .3rem;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3%;
+}
+
+.projects-section-lightmode {
+    text-align: center;
+    padding: 2em 0;
+}
+
+.light-about-section h2,
+.projects-section-lightmode h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    color: black;
+    padding: 0 .23em;
+}
+
+.light-about-section p,
+.projects-section-lightmode p {
+    font-size: 1.3rem;
+    font-weight: light;
+    color: rgb(35, 34, 34);
+    padding: 0 .7em;
+}
+
+@media (max-width:992px) {
+    .light-about-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5rem 0;
+    }
+
+    .light-about-section div:first-of-type {
+        width: 30%;
+        height: 12rem;
+    }
+
+    .light-about-section div:last-of-type {
+        text-align: center;
+        width: 80%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3%;
+    }
+
+}
+
+@media (max-width: 550px) {
+    .light-about-section div:first-of-type {
+        width: 50%;
+        height: 12rem;
+    }
+
+    .light-about-section div:last-of-type {
+        text-align: center;
+        width: 80%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3%;
+    }
+}
+
+.selfIntro-lightmode-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.selfIntro-lightmode-section div:first-of-type {
+    height: 1rem;
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(134, 131, 131);
+    border-top-right-radius: .8rem;
+    border-top-left-radius: .8rem;
+    padding: .9rem;
+}
+
+.selfIntro-lightmode-section div:last-of-type {
+    height: 37rem;
+    width: 70%;
+    background-color: rgba(71, 69, 69, 0.7);
+    padding: .7rem .9em;
+    font-size: 1.17rem;
+    border-radius: .8rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.selfIntro-lightmode-section div span:nth-of-type(2) {
+    color: black;
+    font-weight: bolder;
+}
+
+.normal-lightmode {
+    color: rgb(27, 25, 25);
+    font-weight: bold;
+}
+
+
+.description-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.description-lightmode {
+    border-radius: .7rem;
+    margin: 3rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.projects-background-lightmode div {
+    width: 100%;
+    height: 6%;
+    background-color: rgb(59, 59, 59);
+    padding: 0 .4rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-top-right-radius: inherit;
+    border-top-left-radius: inherit;
+}
+
+.radioone {
+    color: rgb(248, 106, 106);
+    background-color: rgb(248, 106, 106);
+    border-radius: 50%;
+    margin: 0 .2em;
+}
+
+.radiotwo {
+    color: orange;
+    background-color: orange;
+    border-radius: 50%;
+    margin: 0 .2em;
+}
+
+.radiothree {
+    color: green;
+    background-color: green;
+    border-radius: 50%;
+    margin: 0 .2em;
+}
+
+.description-lightmode:nth-of-type(2n) .projects-description-lightmode {
+    background-color: white;
+    padding: 1.5em;
+    height: 13rem;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+
+.description-lightmode:nth-of-type(2n-1) .projects-description-lightmode {
+    background-color: white;
+    padding: 1.5em;
+    height: 13rem;
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+}
+
+.projects-background-lightmode {
+    border-radius: 0.7rem;
+    height: 20rem;
+    background: black;
+}
+
+.description-lightmode:nth-child(6) .projects-background-lightmode {
+    border-radius: 0.7rem;
+    height: 20rem;
+    background-image: url('./backgroundPics/portfolioscreenshot.png');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (min-width: 992px) {
+    .description-lightmode:nth-of-type(2n) {
+        width: 60%;
+        padding: 5em;
+        transform: translateX(5%);
+        background: linear-gradient(45deg, #548a98, #19262c, #627484);
+    }
+
+    .description-lightmode:nth-of-type(2n-1) {
+        width: 60%;
+        padding: 5em;
+        transform: translateX(-5%);
+        background: linear-gradient(45deg, #627484, #19262c, #548a98);
+    }
+
+    .projects-background-lightmode {
+        width: 70%;
+    }
+
+    .description-lightmode:nth-of-type(2n-1) .projects-description-lightmode {
+        transform: translateX(-95%);
+        border-radius: 1rem;
+        width: 45%;
+    }
+
+    .description-lightmode:nth-of-type(2n) .projects-description-lightmode {
+        transform: translateX(95%);
+        border-radius: 1rem;
+        width: 45%;
+    }
+}
+
+@media (max-width: 992px) {
+
+    .selfIntro-lightmode-section {
+        padding: .3rem 0;
+    }
+
+    .selfIntro-lightmode-section div:first-of-type {
+        display: flex;
+        align-items: center;
+    }
+
+    .selfIntro-lightmode-section div:last-of-type {
+        height: 40rem;
+        width: 70%;
+        padding: .7rem .9em;
+        color: white;
+        font-size: 1.17rem;
+        border-radius: .8rem;
+        border-top-right-radius: 0;
+        border-top-left-radius: 0;
+    }
+
+    .description-lightmode:first-of-type {
+        margin-top: 2rem;
+        margin-bottom: 9rem
+    }
+
+    .description-lightmode {
+        transform: translateX(0);
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        margin: 9rem 0;
+        width: 90%;
+        padding: 4em 3em;
+    }
+
+    .description-lightmode:last-of-type {
+        margin-bottom: 18rem;
+    }
+
+    .projects-background-lightmode {
+        width: 100%;
+    }
+
+    .description-lightmode:nth-of-type(2n-1) {
+        background: linear-gradient(45deg, #627484, #19262c, #548a98);
+    }
+
+    .description-lightmode:nth-of-type(2n) {
+        background: linear-gradient(45deg, #548a98, #19262c, #627484);
+    }
+
+    .projects-description-lightmode {
+        border-bottom-left-radius: 0.7rem;
+        border-bottom-right-radius: 0.7rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        position: absolute;
+        bottom: -13em;
+        left: 0;
+        width: 100%;
+    }
+
+}
+
+.projects-description-lightmode p {
+    color: black;
+    font-weight: light;
+    padding: .3em 0;
+    font-size: 95%;
+}
+
+.projects-description-lightmode h4 {
+    display: inline;
+    font-weight: bold;
+    color: black;
+}
+
+.project-link {
+    font-size: 1.3rem;
+    color: #6da3b1;
+}
+
+.projects-description-lightmode div:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    align-items: normal;
+    justify-content: space-between;
+}
+
+.projects-description-lightmode div:nth-of-type(2) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.projects-description-lightmode span {
+    border-radius: .4rem;
+    padding: .2em .5em;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 .1em;
+}
+
+.projects-description-lightmode span:nth-of-type(1) {
+    background-color: #E44D26;
+}
+
+.projects-description-lightmode span:nth-of-type(2) {
+    background-color: #2965f1;
+}
+
+.projects-description-lightmode span:nth-of-type(3) {
+    background-color: #f0db4f;
+}
+
+
+@media(min-width: 768px) {
+
+    .repo-section-lightmode a {
+        background-color: white;
+        border: 1px solid rgba(44, 43, 43, 0.6);
+        color: black;
+        margin: 1.5rem;
+        padding: 1.3rem;
+        width: 40%;
+        border-radius: .5rem;
+        transition: all ease-in-out .2s;
+        text-decoration: none;
+    }
+
+    .footer-lightmodesection {
+        margin: 0% !important;
+        position: relative;
+        display: flex;
+        justify-content: space-evenly;
+        background-color: rgb(26, 27, 27);
+        padding: 1em;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-lightmodesection div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .footer-lightmodesection div a {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        padding: .2rem;
+        margin: 0 .6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-lightmodesection div:last-child .lightmode-link {
+        color: #212121;
+    }
+
+    .footer-lightmodesection div:last-child a:hover::before {
+        content: attr(data-name);
+        position: absolute;
+        top: -20px;
+        background-color: #414143;
+        color: #fff;
+        border-radius: .3125rem;
+        display: inline-block;
+        font-size: .9rem;
+        padding: .08rem .3rem;
+    }
+
+}
+
+@media(max-width: 768px) {
+
+    .selfIntro-lightmode-section {
+        display: none;
+    }
+
+    .repo-section-lightmode {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        padding: 2.5rem 0;
+    }
+
+    .repo-section-lightmode a {
+        background-color: rgb(3, 15, 28);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        margin: 1.5rem;
+        padding: 1.3rem;
+        width: 90%;
+        border-radius: .5rem;
+        transition: all ease-in-out .2s;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .footer-lightmodesection {
+        margin: 0% !important;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(26, 27, 27);
+        padding: 1em;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .footer-lightmodesection div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        margin: .3rem;
+    }
+
+    .footer-lightmodesection div a {
+        background-color: rgba(255, 255, 255, 0.7);
+        border-radius: 50%;
+        padding: .2rem;
+        margin: 0 .6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .footer-lightmodesection div:last-child .lightmode-link {
+        color: #212121;
+    }
+
+    .footer-lightmodesection div:last-child a:hover::before {
+        content: attr(data-name);
+        position: absolute;
+        top: -20px;
+        background-color: #626264;
+        color: #fff;
+        border-radius: .3125rem;
+        font-size: .9rem;
+        padding: .08rem .3rem;
+    }
+
+}
+
+.repo-section-lightmode {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2.5rem 0;
+}
+
+.repo-section-lightmode a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 1px 3px -1px rgb(24, 24, 24);
+}
+
+.repo-section-lightmode a span:first-of-type {
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: block;
+}

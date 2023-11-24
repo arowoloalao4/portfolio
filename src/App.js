@@ -1,24 +1,16 @@
-import './App.css';
+import './darkmode.css';
+import './lightmode.css'
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './homepage';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import ProjectsComponent from './projects';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import RepoPage from './repo';
 
 function App() {
 
-  let [mode, setMode] = useState('darkmode')
+
   let [dropdown, setDropDown] = useState('')
-
-
-  const handleBgMode = () => {
-    if (mode === 'lightmode') {
-      setMode('darkmode')
-    } else {
-      setMode('lightmode')
-    }
-  }
-
 
   const handleDropDown = () => {
 
@@ -33,17 +25,18 @@ function App() {
   return (
     <Routes>
       <Route path='/' element={<HomePage
-        handleBgMode={handleBgMode}
-        mode={mode}
         handleDropDown={handleDropDown}
         dropdown={dropdown} />}></Route>
 
       <Route path='/projects' element={<ProjectsComponent
-        handleBgMode={handleBgMode}
-        mode={mode}
         handleDropDown={handleDropDown}
         dropdown={dropdown}
       />}></Route >
+
+      <Route path='/repos' element={<RepoPage
+        handleDropDown={handleDropDown}
+        dropdown={dropdown}
+      />}></Route>
     </Routes >
   );
 }

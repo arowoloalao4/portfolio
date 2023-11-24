@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Col, Container, Row } from 'react-bootstrap'
+import React, { useEffect, useState } from 'react'
+import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
 import { MdLightMode } from "react-icons/md";
 import { MdOutlineNightlight } from "react-icons/md";
@@ -13,11 +13,10 @@ import { FaGithubSquare } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { BiX } from "react-icons/bi";
+import useMode from './custom-hook/useMode';
 
 
-
-
-const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => {
+const ProjectsComponent = ({ handleDropDown, dropdown }) => {
 
     const [myProjects, setMyProjects] = useState([
         // { name: 'Da-Manager: Pioneering Digital Solutions', url: 'https://da-manager.com' },
@@ -25,7 +24,7 @@ const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => 
         {
             name: 'Bookstore Application',
             url: 'https://bookstoreapp-389b8.web.app',
-            description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB, Firebase (frontend), and Vercel (backend) for seamless book additions.'
+            description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB, Firebase (frontend), and Vercel (backend) for seamless book additions.',
         },
         {
             name: 'Inventory Application',
@@ -48,17 +47,19 @@ const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => 
             description: 'Crafted a user-friendly todo list with React, demonstrating efficient task management. Frontend on Firebase.'
         },
         {
-            name: 'Exchange Application',
-            url: 'https://xchangepage-a9c1b.web.app/',
-            description: 'Developed a currency exchange app with real-time rates for various countries and dynamic rate generation functionality, Frontend on Firebase..'
-        },
-        {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.'
+        },
+        {
+            name: 'Exchange Application',
+            url: 'https://xchangepage-a9c1b.web.app/',
+            description: 'Developed a currency exchange app with real-time rates for various countries and dynamic rate generation functionality, Frontend on Firebase..'
         }
+
     ]);
 
+    const [mode, handleMode] = useMode()
 
     return (<Container fluid
         className={mode === 'lightmode' ?
@@ -72,37 +73,45 @@ const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => 
 
             <section >
                 <div >
-                    <span className={dropdown ? 'dropdown-span' : 'span-links'}>
+                    <span className={dropdown ?
+                        mode === 'lightmode' ?
+                            'dropdown-lightmode' :
+                            'dropdown-darkmode' :
+                        'span-links'}>
                         <button
-                            className={mode === 'darkmode' ?
-                                'canceltogglebtn-darkmode' : 'btn-lightmode'}
+                            className={mode === 'lightmode' ?
+                                'canceltogglebtn-lightmode' : 'canceltogglebtn-darkmode'}
                             onClick={() => handleDropDown()}>
                             <BiX size={32} />
                         </button>
 
                         <a href="/">Home</a>
                         <a href="projects">Projects</a>
-                        <a href="#contact">Contact</a>
+                        <a href="/repos">Repositories</a>
                     </span>
 
-                    <button className={mode === 'darkmode' ?
-                        'dark-mode-btn' : 'light-mode-btn'}
-                        onClick={() => handleBgMode()}
-                        data-name={mode === 'darkmode' ?
-                            'switch to light mode' :
-                            'switch to dark mode'}>
 
-                        {mode === 'darkmode' ?
-                            <MdLightMode size={25} />
+                    <button className={mode === 'lightmode' ?
+                        'lightmode-btn' : 'darkmode-btn'}
+                        onClick={() => handleMode()}
+
+                        data-name={mode === 'lightmode' ?
+                            'switch to dark mode' :
+                            'switch to light mode'}>
+
+                        {mode === 'lightmode' ?
+                            <MdOutlineNightlight size={25} />
                             :
-                            <MdOutlineNightlight size={32} />}
+                            <MdLightMode size={25} />
+                        }
 
                     </button>
                 </div>
 
                 <div>
                     <button onClick={() => handleDropDown()}
-                        className='togglebtn-darkmode'>
+                        className={mode === 'lightmode' ?
+                            'togglebtn-lightmode' : 'togglebtn-darkmode'}>
                         <hr></hr>
                         <hr></hr>
                         <hr></hr>
@@ -112,7 +121,8 @@ const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => 
         </nav >
 
 
-        <section className="project-section">
+        <section className={mode === 'lightmode' ?
+            'projects-section-lightmode' : 'projects-section-darkmode'}>
             <h2>My projects</h2>
             <p>Highlights from my projects</p>
         </section>
@@ -162,34 +172,36 @@ const ProjectsComponent = ({ handleBgMode, mode, handleDropDown, dropdown }) => 
 
         </section>
 
-        <section className="footer-section">
+        <section className={mode === 'lightmode' ?
+            'footer-lightmodesection' : 'footer-darkmodesection'}>
             <div>
-                <FaCode size={19} className={mode === 'darkmode' ?
-                    "darkmode-link me-2" : 'lightmode-link'} />
+                <FaCode size={19} className={mode === 'lightmode' ?
+                    "lightmode-link" : 'darkmode-link me-2'} />
                 Web Developer
             </div>
 
             <div>
                 <Link to={'mailto:olaoluwa_oke@outlook.com'}
                     data-name="Email">
-                    <MdOutlineMail size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'}
+                    <MdOutlineMail size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'}
                     />
                 </Link>
 
                 <Link to={'https://www.linkedin.com/in/olaoluwa-oke-478a7b298/'}
                     data-name="Linkedln">
-                    <FaLinkedin size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'} />
+                    <FaLinkedin size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'} />
                 </Link>
 
                 <Link to={'https://github.com/Ollah16/'}
                     data-name="GitHub">
-                    <FaGithubSquare size={19} className={mode === 'darkmode' ?
-                        "darkmode-link" : 'lightmode-link'} />
+                    <FaGithubSquare size={19} className={mode === 'lightmode' ?
+                        "lightmode-link" : 'darkmode-link'} />
                 </Link>
             </div>
-        </section>
+        </section >
+
 
     </Container >)
 }
