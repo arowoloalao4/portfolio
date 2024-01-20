@@ -1,17 +1,15 @@
 import React, { useState } from "react";
 import { Container } from "react-bootstrap";
-import { BiX } from "react-icons/bi";
-import { MdLightMode } from "react-icons/md";
-import { MdOutlineNightlight } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
 import { Link } from "react-router-dom";
 import useMode from "./custom-hook/useMode";
+import NavBar from "./navbar";
 
 
-const RepoPage = ({ handleDropDown, dropdown }) => {
+const RepoPage = ({ }) => {
 
     const [gitRepos, setGitRepos] = useState([
         {
@@ -63,59 +61,9 @@ const RepoPage = ({ handleDropDown, dropdown }) => {
     const [mode, handleMode] = useMode()
 
     return (<Container fluid
-        className={mode === 'lightmode' ?
-            'homepage-lightmode' : 'homepage-darkmode'}>
+        className={`homepage ${mode}`}>
 
-        <nav
-            className={mode === 'lightmode' ?
-                'navbar-lightmode' : 'navbar-darkmode'}>
-
-            <a href="/">Olaoluwa</a>
-
-            <section >
-                <div >
-                    <span className={dropdown ? 'dropdown-span' : 'span-links'}>
-                        <button
-                            className={mode === 'lightmode' ?
-                                'canceltogglebtn-lightmode' : 'canceltogglebtn-darkmode'}
-                            onClick={() => handleDropDown()}>
-                            <BiX size={32} />
-                        </button>
-
-                        <a href="/">Home</a>
-                        <a href="projects">Projects</a>
-                        <a href="/repos">Repositories</a>
-                    </span>
-
-
-                    <button className={mode === 'lightmode' ?
-                        'lightmode-btn' : 'darkmode-btn'}
-                        onClick={() => handleMode()}
-
-                        data-name={mode === 'lightmode' ?
-                            'switch to dark mode' :
-                            'switch to light mode'}>
-
-                        {mode === 'lightmode' ?
-                            <MdOutlineNightlight size={25} />
-                            :
-                            <MdLightMode size={25} />
-                        }
-
-                    </button>
-                </div>
-
-                <div>
-                    <button onClick={() => handleDropDown()}
-                        className={mode === 'lightmode' ?
-                            'togglebtn-darkmode' : 'togglebtn-lightmode'}>
-                        <hr></hr>
-                        <hr></hr>
-                        <hr></hr>
-                    </button>
-                </div>
-            </section>
-        </nav >
+        <NavBar mode={mode} handleMode={handleMode} />
 
         <section className={mode === 'lightmode' ?
             'projects-section-lightmode' : 'projects-section-darkmode'}>

@@ -1,65 +1,46 @@
-.homepage-lightmode {
+.homepage {
     padding: 0 !important;
     min-height: 100vh;
+}
+
+.homepage.lightmode {
     background-color: rgb(182, 178, 178);
 }
 
-.navbar-lightmode {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    position: sticky;
-    top: 0;
+.navBar.lightmode {
+    color: #000;
     background-color: rgba(65, 66, 66, 0.6);
-    z-index: 100;
-    backdrop-filter: blur(6px);
-    height: 4em;
 }
 
-.navbar-lightmode a {
+.navBar.lightmode .nav_linkbrand a:hover {
+    border-bottom: 5px solid #000;
+}
+
+/* .navBar.lightmode a {
     text-decoration: none;
     font-weight: 500;
     font-size: 1.1rem;
     color: black;
-}
+} */
 
-.navbar-lightmode a[href='/']:first-child {
-    font-size: 25px;
-    font-weight: bold;
-    line-height: normal;
-}
-
-.navbar-lightmode section div:first-child {
+/* .navBar.lightmode section div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.navbar-lightmode section div:first-child a {
-    margin: 0 2rem;
-}
 
-.togglebtn-lightmode,
+/* .togglebtn-lightmode,
 .canceltogglebtn-lightmode,
-.navbar-lightmode section a:first-of-type {
+.navBar.lightmode section a:first-of-type {
     display: none;
+} */
+
+.modeToggle.lightmode {
+    color: inherit;
 }
 
-.lightmode-btn {
-    background-color: transparent;
-    transition: background-color ease-in-out .2s, color ease-in-out .2s;
-    margin: 0 2.5rem;
-    border: none;
-    border-radius: .4rem;
-    height: 2.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #0d171a;
-}
-
-.lightmode-btn:hover:before {
+.modeToggle.lightmode:hover:before {
     content: attr(data-name);
     position: absolute;
     bottom: -2em;
@@ -73,96 +54,58 @@
 
 }
 
-.lightmode-btn:hover {
+.modeToggle.lightmode:hover {
     background-color: #3b3b3c;
     color: white
 }
 
-.navbar-lightmode a[href='/']:first-child {
-    font-size: 25px;
-    font-weight: bold;
-    line-height: normal;
-}
-
-.navbar-lightmode section div:first-child {
+/* .navBar.lightmode section div:first-child {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
+} */
 
-.navbar-lightmode section div:first-child a {
-    margin: 0 2rem;
-}
-
+/* 
 .togglebtn-lightmode,
-.canceltogglebtn-lightmode,
-.navbar-lightmode section a:first-of-type {
+.canceltogglebtn-lightmode {
     display: none;
+} */
+
+.toggleBurger.lightmode {
+    color: inherit;
+}
+
+.toggleBurger.lightmode:hover {
+    background-color: #3b3b3c;
 }
 
 @media (max-width:768px) {
 
-    .navbar-lightmode section {
-        display: flex;
-        justify-content: space-between;
-    }
-
     .togglebtn-lightmode,
     .canceltogglebtn-lightmode,
-    .navbar-lightmode section a:first-of-type {
+    .navBar.lightmode section a:first-of-type {
         display: inline-block;
     }
 
-    .togglebtn-lightmode {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        background-color: transparent;
-        border: none;
-        padding: .4rem;
+    .togglebtn.lightmode {
         color: black;
-        transition: background-color ease-in-out .2s, color ease-in-out .2s;
-        border-radius: .4rem;
-        border-radius: .3125rem;
-        font-size: .9rem;
-        height: 2.8rem;
     }
 
-    .togglebtn-lightmode:hover {
+    .togglebtn.lightmode:hover {
         background-color: #3b3b3c;
-        color: white;
     }
 
-    .dropdown-lightmode {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        position: absolute;
+    .dropdown.lightmode {
         background-color: rgba(38, 39, 39, 0.9);
-        z-index: 100;
-        backdrop-filter: blur(1.5rem);
+    }
+
+    .dropdown.lightmode {
         top: 0;
-        left: 0;
-        width: 100%;
-        height: 20rem;
     }
 
-    .dropdown-lightmode a {
-        width: 100%;
-        text-align: center;
-        padding: .3em;
-        background-color: transparent;
-        text-decoration: none;
-        border-radius: .2em;
-        color: white;
-        transition: background-color ease-in-out 0.2s, text-decoration ease-in-out 0.2s;
-    }
-
-    .dropdown-lightmode a:hover {
+    .dropdown.lightmode a:hover {
         text-decoration: underline;
         background-color: rgba(233, 238, 243, 0.1);
-        margin: 0;
     }
 
     .dropdown-lightmode button {
@@ -187,24 +130,6 @@
 
 }
 
-.light-about-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem;
-}
-
-.light-about-section div:first-of-type {
-    width: 23%;
-    height: 15rem;
-    margin: 0 .3rem;
-}
-
-.light-about-section div:last-of-type {
-    width: 40%;
-    margin: 0 .3rem;
-}
-
 img {
     width: 100%;
     height: 100%;
@@ -216,7 +141,7 @@ img {
     padding: 2em 0;
 }
 
-.light-about-section h2,
+.about-section.lightmode h2,
 .projects-section-lightmode h2 {
     font-size: 4rem;
     font-weight: 500;
@@ -224,16 +149,24 @@ img {
     padding: 0 .23em;
 }
 
-.light-about-section p,
+.about-section.lightmode p,
 .projects-section-lightmode p {
     font-size: 1.3rem;
-    font-weight: light;
+    font-weight: lighter;
     color: rgb(35, 34, 34);
     padding: 0 .7em;
 }
 
+.about-section.lightmode>div:last-of-type {
+    width: 40%;
+    margin: 0 .3rem;
+    color: white;
+}
+
+
+
 @media (max-width:992px) {
-    .light-about-section {
+    .about-section.lightmode {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -241,12 +174,12 @@ img {
         padding: 5rem 0;
     }
 
-    .light-about-section div:first-of-type {
+    .about-section.lightmode div:first-of-type {
         width: 30%;
         height: 12rem;
     }
 
-    .light-about-section div:last-of-type {
+    .about-section.lightmode div:last-of-type {
         text-align: center;
         width: 80%;
     }
@@ -259,23 +192,6 @@ img {
 
 }
 
-@media (max-width: 550px) {
-    .light-about-section div:first-of-type {
-        width: 50%;
-        height: 12rem;
-    }
-
-    .light-about-section div:last-of-type {
-        text-align: center;
-        width: 80%;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        border-radius: 3%;
-    }
-}
 
 .selfIntro-lightmode-section {
     display: flex;
@@ -325,27 +241,6 @@ img {
     justify-content: space-around;
 }
 
-.description-lightmode {
-    border-radius: .7rem;
-    margin: 3rem;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.projects-background-lightmode div {
-    width: 100%;
-    height: 6%;
-    background-color: rgb(59, 59, 59);
-    padding: 0 .4rem;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    border-top-right-radius: inherit;
-    border-top-left-radius: inherit;
-}
-
 .radioone {
     color: rgb(248, 106, 106);
     background-color: rgb(248, 106, 106);
@@ -367,68 +262,16 @@ img {
     margin: 0 .2em;
 }
 
-.description-lightmode:nth-of-type(2n) .projects-description-lightmode {
+.projects-description.lightmode {
     background-color: white;
-    padding: 1.5em;
-    height: 13rem;
-    display: flex;
-    position: absolute;
-    flex-direction: column;
 }
 
-.description-lightmode:nth-of-type(2n-1) .projects-description-lightmode {
-    background-color: white;
-    padding: 1.5em;
-    height: 13rem;
-    display: flex;
-    position: absolute;
-    flex-direction: column;
+.description.lightmode:nth-of-type(2n) {
+    background: linear-gradient(45deg, #548a98, #19262c, #627484);
 }
 
-.projects-background-lightmode {
-    border-radius: 0.7rem;
-    height: 20rem;
-    background: black;
-}
-
-.description-lightmode:nth-child(6) .projects-background-lightmode {
-    border-radius: 0.7rem;
-    height: 20rem;
-    background-image: url('./backgroundPics/portfolioscreenshot.png');
-    background-size: cover;
-    background-position: center;
-}
-
-@media (min-width: 992px) {
-    .description-lightmode:nth-of-type(2n) {
-        width: 60%;
-        padding: 5em;
-        transform: translateX(5%);
-        background: linear-gradient(45deg, #548a98, #19262c, #627484);
-    }
-
-    .description-lightmode:nth-of-type(2n-1) {
-        width: 60%;
-        padding: 5em;
-        transform: translateX(-5%);
-        background: linear-gradient(45deg, #627484, #19262c, #548a98);
-    }
-
-    .projects-background-lightmode {
-        width: 70%;
-    }
-
-    .description-lightmode:nth-of-type(2n-1) .projects-description-lightmode {
-        transform: translateX(-95%);
-        border-radius: 1rem;
-        width: 45%;
-    }
-
-    .description-lightmode:nth-of-type(2n) .projects-description-lightmode {
-        transform: translateX(95%);
-        border-radius: 1rem;
-        width: 45%;
-    }
+.description.lightmode:nth-of-type(2n-1) {
+    background: linear-gradient(45deg, #627484, #19262c, #548a98);
 }
 
 @media (max-width: 992px) {
@@ -483,7 +326,7 @@ img {
         background: linear-gradient(45deg, #548a98, #19262c, #627484);
     }
 
-    .projects-description-lightmode {
+    .projects-description.lightmode {
         border-bottom-left-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
         border-top-left-radius: 0;
@@ -496,38 +339,47 @@ img {
 
 }
 
-.projects-description-lightmode p {
+.projects-description.lightmode p {
     color: black;
     font-weight: light;
     padding: .3em 0;
     font-size: 95%;
 }
 
-.projects-description-lightmode h4 {
+.projects-description.lightmode h4 {
     display: inline;
     font-weight: bold;
     color: black;
 }
 
+.projects-description.lightmode:hover {
+    background-color: rgba(255, 255, 255, .8);
+}
+
 .project-link {
     font-size: 1.3rem;
     color: #6da3b1;
+    transition: color ease-in-out 200ms;
 }
 
-.projects-description-lightmode div:nth-of-type(1) {
+.projects-description:hover .project-link {
+    color: rgba(109, 163, 177, .9);
+}
+
+.projects-description.lightmode div:nth-of-type(1) {
     display: flex;
     flex-direction: row;
     align-items: normal;
     justify-content: space-between;
 }
 
-.projects-description-lightmode div:nth-of-type(2) {
+.projects-description.lightmode div:nth-of-type(2) {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.projects-description-lightmode span {
+.projects-description.lightmode span {
     border-radius: .4rem;
     padding: .2em .5em;
     font-size: 1em;
@@ -538,17 +390,17 @@ img {
     margin: 0 .1em;
 }
 
-.projects-description-lightmode span:nth-of-type(1) {
+/* .projects-description.lightmode span:nth-of-type(1) {
     background-color: #E44D26;
 }
 
-.projects-description-lightmode span:nth-of-type(2) {
+.projects-description.lightmode span:nth-of-type(2) {
     background-color: #2965f1;
 }
 
-.projects-description-lightmode span:nth-of-type(3) {
+.projects-description.lightmode span:nth-of-type(3) {
     background-color: #f0db4f;
-}
+} */
 
 
 @media(min-width: 768px) {

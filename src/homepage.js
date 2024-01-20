@@ -1,23 +1,20 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import { MdLightMode } from "react-icons/md";
-import { MdOutlineNightlight } from "react-icons/md";
+
 import { MdOutlineMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaCode } from "react-icons/fa";
-import { BiX } from "react-icons/bi";
 import { IoRadioButtonOffSharp } from "react-icons/io5";
 import { RiParenthesesLine } from "react-icons/ri";
 import useMode from "./custom-hook/useMode";
-import { GrMenu } from "react-icons/gr";
+import NavBar from "./navbar";
 
 
-const HomePage = ({ handleDropDown, dropdown }) => {
+const HomePage = ({ }) => {
 
     const [mode, handleMode] = useMode()
-
     let [introConst, setIntroConst] = useState('')
     let [selfDescription, setDescription] = useState('')
 
@@ -25,7 +22,7 @@ const HomePage = ({ handleDropDown, dropdown }) => {
 
     let myDesc = `
     \n> self.currentLocation
-    "Leicester, UK"
+    "London, United Kingdom"
     \n> self.interests
     ["database", "mysql", "sql server", "anime", "book"]
     \n> self.education
@@ -83,67 +80,14 @@ const HomePage = ({ handleDropDown, dropdown }) => {
         }
     }
 
-    return (<Container fluid
-        className={mode === 'lightmode' ?
-            'homepage-lightmode' : 'homepage-darkmode'}>
 
-        <nav
-            className={mode === 'lightmode' ?
-                'navbar-lightmode' : 'navbar-darkmode'}>
-
-            <a href="/">Olaoluwa</a>
-
-            <section >
-                <div >
-                    <span className={dropdown ?
-                        mode === 'lightmode' ?
-                            'dropdown-lightmode' :
-                            'dropdown-darkmode' :
-                        'span-links'}>
-                        <button
-                            className={mode === 'lightmode' ?
-                                'canceltogglebtn-lightmode' : 'canceltogglebtn-darkmode'}
-                            onClick={() => handleDropDown()}>
-                            <BiX size={32} />
-                        </button>
-
-                        <a href="/">Home</a>
-                        <a href="projects">Projects</a>
-                        <a href="/repos">Repositories</a>
-                    </span>
+    return (<Container fluid className={`homepage ${mode}`}>
 
 
-                    <button className={mode === 'lightmode' ?
-                        'lightmode-btn' : 'darkmode-btn'}
-                        onClick={() => handleMode()}
-
-                        data-name={mode === 'lightmode' ?
-                            'switch to dark mode' :
-                            'switch to light mode'}>
-
-                        {mode === 'lightmode' ?
-                            <MdOutlineNightlight size={25} />
-                            :
-                            <MdLightMode size={25} />
-                        }
-
-                    </button>
-                </div>
-
-                <div>
-                    <button onClick={() => handleDropDown()}
-                        className={mode === 'lightmode' ?
-                            'togglebtn-lightmode' : 'togglebtn-darkmode'}>
-                        <GrMenu size={25} />
-                    </button>
-                </div>
-            </section>
-        </nav >
+        <NavBar mode={mode} handleMode={handleMode} />
 
 
-
-        <section className={mode === 'lightmode' ?
-            'light-about-section' : 'dark-about-section'}>
+        <section className={`about-section ${mode}`}>
             <div>
                 <img src={require(`${'./asset/photo.jpg'}`)} />
             </div>

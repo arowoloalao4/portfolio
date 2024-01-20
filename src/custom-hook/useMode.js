@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function useMode() {
+const useMode = () => {
     let [mode, setMode] = useState(localStorage.mode ? localStorage.getItem('mode') : 'darkmode');
 
     const handleMode = () => {
@@ -13,7 +13,7 @@ export default function useMode() {
     };
 
     localStorage.setItem('mode', mode)
-
     return [mode, handleMode];
 
 }
+export default useMode

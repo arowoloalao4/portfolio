@@ -1,54 +1,105 @@
-.homepage-darkmode {
-  padding: 0 !important;
-  min-height: 100vh;
+.homepage.darkmode {
   background-color: #17212b;
 }
 
-.navbar-darkmode {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
+.navBar {
+  position: -webkit-sticky;
   position: sticky;
+  width: 100%;
   top: 0;
-  background-color: rgba(3, 15, 28, 0.6);
   z-index: 100;
   backdrop-filter: blur(6px);
   height: 4em;
 }
 
-.navbar-darkmode a {
+.navBar.darkmode {
+  background-color: rgba(3, 15, 28, 0.6);
+  color: white;
+}
+
+.nav_linkbrand {
+  display: flex;
+  justify-content: flex-end;
+  width: 40%;
+  flex: 1;
+}
+
+.nav_linkbrand a {
+  color: inherit;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-top: 5px;
+  padding-bottom: 3px;
+  border-bottom: 5px solid transparent;
+  transition: border-bottom ease-in-out 100ms;
+}
+
+.navBar.darkmode .nav_linkbrand a:hover {
+  border-bottom: 5px solid white;
+}
+
+/* .navBar-darkmode a {
   text-decoration: none;
   font-weight: 400;
   font-size: 1.1rem;
   color: white;
-}
+} */
 
-.navbar-darkmode a[href='/']:first-child {
+.nav-brand-bar a[href='/']:first-child {
   font-size: 25px;
   font-weight: bold;
   line-height: normal;
+  text-decoration: none;
+  color: inherit;
 }
 
-.navbar-darkmode section div:first-child {
+.nav-brand-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.navbar-darkmode section div:first-child a {
+@media(max-width:992px) {
+  .nav-brand-bar {
+    padding: 10px;
+  }
+}
+
+
+@media(min-width:992px) {
+  .nav-brand-bar {
+    padding: 10px 25px;
+  }
+}
+
+.nav-brand-bar>div:nth-child(2) {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+/* .navBar-darkmode section>div:first-child a {
   margin: 0 2rem;
+}  */
+
+.nav-brand-bar {
+  display: flex;
+  justify-content: space-between;
 }
 
-.togglebtn-darkmode,
-.canceltogglebtn-darkmode,
-.navbar-darkmode section a:first-of-type {
+/* .togglebtn-darkmode,
+.toggleBurger,
+.navBar-darkmode section a:first-of-type {
   display: none;
-}
+} */
 
-.darkmode-btn {
+.modeToggle {
   background-color: transparent;
-  transition: background-color ease-in-out .2s;
+  transition: background-color ease-in-out .2s, color ease-in-out .2s;
   margin: 0 2.5rem;
   border: none;
   border-radius: .4rem;
@@ -56,10 +107,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.modeToggle.darkmode {
   color: #62d4f7;
 }
 
-.darkmode-btn:hover:before {
+.modeToggle.darkmode:hover:before {
   content: attr(data-name);
   position: absolute;
   bottom: -2em;
@@ -73,110 +127,175 @@
 
 }
 
-.darkmode-btn:hover {
+.modeToggle:hover {
   background-color: #185ba3;
+}
+
+/* .dropdown.darkmode>div:nth-child(1) {
+  width: 100%;
+} */
+
+.dropdown>div:nth-child(1) .nav_link {
+  display: flex;
+  flex-direction: column;
+}
+
+.dropdown>div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 10%;
+  position: relative;
+}
+
+.dropdown {
+  display: none;
+}
+
+.toggleBurger {
+  display: none;
 }
 
 
 @media (max-width:768px) {
 
-  .navbar-darkmode section {
-    display: flex;
-    justify-content: space-between;
+  /* .navBar-darkmode section:nth-child(2) {
+    width: 100%;
+    position: relative;
+    top: -65px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+  } */
+
+  .nav_linkbrand {
+    display: none;
+  }
+
+  .toggleBurger {
+    display: block;
+    background-color: transparent;
+    border: 0;
+    transition: background-color ease-in-out .2s, color ease-in-out .2s;
+    height: 2.8rem;
+    border-radius: .4rem;
+  }
+
+  .toggleBurger.darkmode {
+    color: #62d4f7;
+  }
+
+  .toggleBurger.darkmode:hover {
+    background-color: #185ba3;
   }
 
   .togglebtn-darkmode,
-  .canceltogglebtn-darkmode,
-  .navbar-darkmode section a:first-of-type {
+  .toggleBurger,
+  .navBar-darkmode section a:first-of-type {
     display: inline-block;
   }
 
-  .togglebtn-darkmode {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    padding: .4rem;
-    transition: background-color ease-in-out .2s;
-    border-radius: .4rem;
-    border-radius: .3125rem;
-    font-size: .9rem;
-    height: 2.8rem;
-    color: white;
-  }
-
-  .togglebtn-darkmode:hover {
+  .togglebtn.darkmode:hover {
     background-color: rgba(248, 246, 249, 0.2);
   }
 
-  .dropdown-darkmode {
+  .dropdown {
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    position: absolute;
-    background-color: rgba(1, 7, 12, .9);
+    position: absolute !important;
+    text-decoration: none;
     z-index: 100;
-    backdrop-filter: blur(1.5rem);
-    top: 0;
+    backdrop-filter: blur(50px);
+    top: -500px;
     left: 0;
+    right: 0;
     width: 100%;
-    height: 20rem;
+    height: 22rem;
+    transition: top ease-in-out 500ms, background-color ease-in-out 500ms, color ease-in-out 500ms;
   }
 
-  .dropdown-darkmode a {
+  .dropdown.darkmode {
+    background-color: rgba(1, 7, 12, .9);
+  }
+
+  .dropdown>div {
+    width: 100%;
+  }
+
+  .nav_link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown.darkmode {
+    top: 0;
+  }
+
+  .nav_link a {
+    margin: 40px 0 !important;
+    text-decoration: none;
     width: 100%;
     text-align: center;
+    border-radius: .2em;
+    color: white !important;
     padding: .3em;
     background-color: transparent;
     text-decoration: none;
-    border-radius: .2em;
+  }
+
+  .dropdown a {
     transition: background-color ease-in-out 0.2s, text-decoration ease-in-out 0.2s;
   }
 
-  .dropdown-darkmode a:hover {
+  .dropdown.darkmode a:hover {
     text-decoration: underline;
     background-color: rgba(233, 238, 243, 0.1);
-    margin: 0;
   }
 
-  .dropdown-darkmode button {
-    align-self: flex-end;
+  .togglebtn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color ease-in-out .2s;
+    height: 2.8rem;
+    position: absolute;
+    top: 12px;
+    right: 2.5px;
     background-color: transparent;
     border: none;
     border-radius: .4em;
     padding: .2rem;
-    color: white;
     margin: 0 2rem;
     font-size: 1.2rem;
-    transition: background-color ease-in-out 0.2s;
   }
 
-  .dropdown-darkmode button:hover {
+  .togglebtn.darkmode {
+    color: white;
+  }
+
+  .dropdown.darkmode button:hover {
     background-color: rgba(248, 246, 249, 0.2);
   }
 
-  .span-links {
-    display: none;
+  .inactive {
+    top: -500px !important;
   }
 
 }
 
-.dark-about-section {
+.about-section {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 4rem;
 }
 
-.dark-about-section div:first-of-type {
+.about-section>div:first-of-type {
   width: 23%;
   height: 15rem;
   margin: 0 .3rem;
 }
 
-.dark-about-section div:last-of-type {
+.about-section.darkmode>div:last-of-type {
   width: 40%;
   margin: 0 .3rem;
   color: white;
@@ -193,7 +312,7 @@ img {
   padding: 2em 0;
 }
 
-.dark-about-section h2,
+.about-section.darkmode h2,
 .projects-section-darkmode h2 {
   font-size: 4rem;
   font-weight: 500;
@@ -201,7 +320,7 @@ img {
   padding: 0 .23em;
 }
 
-.dark-about-section p,
+.about-section.darkmode p,
 .projects-section-darkmode p {
   font-size: 1.3rem;
   font-weight: lighter;
@@ -210,7 +329,7 @@ img {
 }
 
 @media (max-width:992px) {
-  .dark-about-section {
+  .about-section.darkmode {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -218,12 +337,12 @@ img {
     padding: 5rem 0;
   }
 
-  .dark-about-section div:first-of-type {
+  .about-section.darkmode div:first-of-type {
     width: 30%;
     height: 12rem;
   }
 
-  .dark-about-section div:last-of-type {
+  .about-section.darkmode div:last-of-type {
     text-align: center;
     width: 80%;
   }
@@ -237,12 +356,12 @@ img {
 }
 
 @media (max-width: 550px) {
-  .dark-about-section div:first-of-type {
+  .about-section div:first-of-type {
     width: 50%;
     height: 12rem;
   }
 
-  .dark-about-section div:last-of-type {
+  .about-section div:last-of-type {
     text-align: center;
     width: 80%;
   }
@@ -306,27 +425,52 @@ img {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  position: relative;
 }
 
-.description-darkmode {
+.description {
   border-radius: .7rem;
-  margin: 3rem;
+  height: 100%;
+  margin: 3rem 0;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.projects-background-darkmode div {
+.project-icon-div {
+  position: relative;
   width: 100%;
   height: 6%;
   background-color: rgb(59, 59, 59);
-  padding: 0 .4rem;
+  padding: 3px 2px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-top-right-radius: inherit;
-  border-top-left-radius: inherit;
+  border-radius: 0;
+  border-top-right-radius: .4em;
+  border-top-left-radius: .4em;
+}
+
+.project-image-div {
+  position: relative;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  /* border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: .4em;
+  border-bottom-right-radius: .4em; */
+}
+
+.project-image-div img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  border-bottom-left-radius: .4em;
+  border-bottom-right-radius: .4em;
 }
 
 .radioone {
@@ -350,68 +494,74 @@ img {
   margin: 0 .2em;
 }
 
-.description-darkmode:nth-of-type(2n) .projects-description-darkmode {
-  background-color: rgb(3, 15, 28);
-  padding: 1.5em;
+.projects-description {
+  padding: 15px 10px;
   height: 13rem;
   display: flex;
   position: absolute;
   flex-direction: column;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background-color ease-in-out 200ms;
 }
 
-.description-darkmode:nth-of-type(2n-1) .projects-description-darkmode {
+.projects-description a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.projects-description.darkmode {
   background-color: rgb(3, 15, 28);
-  padding: 1.5em;
-  height: 13rem;
-  display: flex;
-  position: absolute;
-  flex-direction: column;
 }
 
-.projects-background-darkmode {
-  border-radius: 0.7rem;
-  height: 20rem;
-  background: black;
-}
-
-.description-darkmode:nth-child(6) .projects-background-darkmode {
-  border-radius: 0.7rem;
-  height: 20rem;
-  background-image: url('./backgroundPics/portfolioscreenshot.png');
-  background-size: cover;
-  background-position: center;
+.projects-description.darkmode:hover {
+  background-color: rgba(3, 15, 28, .8);
 }
 
 @media (min-width: 992px) {
-
-  .description-darkmode:nth-of-type(2n) {
-    width: 60%;
+  .description {
+    width: 55% !important;
     padding: 5em;
-    transform: translateX(5%);
+    border-radius: 1rem;
+    position: relative;
+  }
+
+  .description:nth-of-type(2n) {
+    right: 5%;
+  }
+
+  .description:nth-of-type(2n-1) {
+    left: 5%;
+  }
+
+  .description.darkmode:nth-of-type(2n) {
     background: linear-gradient(45deg, #548a98, #19262c, #627484);
   }
 
-  .description-darkmode:nth-of-type(2n-1) {
-    width: 60%;
-    padding: 5em;
-    transform: translateX(-5%);
+  .description.darkmode:nth-of-type(2n-1) {
     background: linear-gradient(45deg, #627484, #19262c, #548a98);
   }
 
-  .projects-background-darkmode {
-    width: 70%;
+  .inner-description {
+    position: relative;
+    width: 100%;
   }
 
-  .description-darkmode:nth-of-type(2n-1) .projects-description-darkmode {
-    transform: translateX(-95%);
+  .projects-description {
+    width: 50%;
+    overflow: hidden;
     border-radius: 1rem;
-    width: 45%;
+    height: 40%;
   }
 
-  .description-darkmode:nth-of-type(2n) .projects-description-darkmode {
-    transform: translateX(95%);
-    border-radius: 1rem;
-    width: 45%;
+
+
+  .description:nth-of-type(2n-1) .projects-description {
+    left: -35%;
+  }
+
+  .description:nth-of-type(2n) .projects-description {
+    right: -35%;
   }
 }
 
@@ -438,37 +588,37 @@ img {
     border-top-left-radius: 0;
   }
 
-  .description-darkmode:first-of-type {
+  .description:first-of-type {
     margin-top: 2rem;
     margin-bottom: 9rem
   }
 
-  .description-darkmode {
+  .description {
     transform: translateX(0);
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
     margin: 9rem 0;
     width: 90%;
     padding: 4em 3em;
   }
 
-  .description-darkmode:last-of-type {
+  .description:last-of-type {
     margin-bottom: 18rem;
   }
 
-  .projects-background-darkmode {
+  .projects-background img {
     width: 100%;
   }
 
-  .description-darkmode:nth-of-type(2n-1) {
+  .description.darkmode:nth-of-type(2n-1) {
     background: linear-gradient(45deg, #627484, #19262c, #548a98);
   }
 
-  .description-darkmode:nth-of-type(2n) {
+  .description.darkmode:nth-of-type(2n) {
     background: linear-gradient(45deg, #548a98, #19262c, #627484);
   }
 
-  .projects-description-darkmode {
+  .projects-description.darkmode {
     border-bottom-left-radius: 0.7rem;
     border-bottom-right-radius: 0.7rem;
     border-top-left-radius: 0;
@@ -481,14 +631,19 @@ img {
 
 }
 
-.projects-description-darkmode p {
+.projects-description p {
+  margin: 0;
+}
+
+.projects-description.darkmode p {
   color: white;
   font-weight: light;
   padding: .3em 0;
-  font-size: 95%;
+  font-size: 16px;
+  line-height: normal;
 }
 
-.projects-description-darkmode h4 {
+.projects-description.darkmode h4 {
   display: inline;
   font-weight: bold;
   color: white;
@@ -499,20 +654,21 @@ img {
   color: #6da3b1;
 }
 
-.projects-description-darkmode div:nth-of-type(1) {
+.projects-description.darkmode div:nth-of-type(1) {
+  max-width: 100%;
   display: flex;
   flex-direction: row;
   align-items: normal;
   justify-content: space-between;
 }
 
-.projects-description-darkmode div:nth-of-type(2) {
+.projects-description.darkmode div:nth-of-type(2) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.projects-description-darkmode span {
+.projects-description.darkmode span {
   border-radius: .4rem;
   padding: .2em .5em;
   font-size: 1em;
@@ -523,15 +679,15 @@ img {
   margin: 0 .1em;
 }
 
-.projects-description-darkmode span:nth-of-type(1) {
+.projects-description span:nth-of-type(1):not(span.text-white) {
   background-color: #E44D26;
 }
 
-.projects-description-darkmode span:nth-of-type(2) {
+.projects-description span:nth-of-type(2) {
   background-color: #2965f1;
 }
 
-.projects-description-darkmode span:nth-of-type(3) {
+.projects-description span:nth-of-type(3) {
   background-color: #f0db4f;
 }
 
