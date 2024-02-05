@@ -17,6 +17,7 @@ const HomePage = ({ }) => {
     const [mode, handleMode] = useMode()
     let [introConst, setIntroConst] = useState('')
     let [selfDescription, setDescription] = useState('')
+    let [listenerAdded, setListener] = useState(false)
 
     const p = '> self.learnAboutMe( )\nPress enter to see what I am about.'
 
@@ -28,7 +29,7 @@ const HomePage = ({ }) => {
     \n> self.education
     "Engineering Management, 2022-2023, Agricultural Engineering, 2012-2020 && Udemy web development, 2019-2020"
     \n> self.skills
-    ["HTML", "CSS", "Javascript", "React", "Node.js", "Bootstrap", "MySQL", "NoSQL", "Git"]
+    ["HTML", "CSS", "Javascript", "React", "Bootstrap", "Chakra", "Node.js", "MySQL", "NoSQL", "Git"]
     \n> self.contactMe( )
     ["LinkedIn", "Github", "Twitter/X", "Instagram", "Discord", "Telegram", "Email"]`
 
@@ -57,7 +58,25 @@ const HomePage = ({ }) => {
 
     }, [p])
 
+    const handleDisplay = (event) => {
+        if (event.key === 'Enter') {
+            setIntroConst(p.replace(
+                'Press enter to see what I am about.',
+                'Loaded data . . .'
+            ));
+
+            for (let i = 0; i < myDesc.length; i++) {
+                setTimeout(() => {
+                    setDescription(prev => prev += myDesc[i])
+                }, i * 50)
+            }
+
+            document.removeEventListener('keypress', handleDisplay);
+        }
+    }
+
     useEffect(() => {
+
         document.addEventListener('keypress', handleDisplay);
 
         return () => {
@@ -66,26 +85,8 @@ const HomePage = ({ }) => {
 
     }, []);
 
-    const handleDisplay = () => {
-
-        setIntroConst(p.replace(
-            'Press enter to see what I am about.',
-            'Loaded data . . .'
-        ));
-
-        for (let i = 0; i < myDesc.length; i++) {
-            setTimeout(() => {
-                setDescription(prev => prev += myDesc[i])
-            }, i * 50)
-        }
-    }
-
-
     return (<Container fluid className={`homepage ${mode}`}>
-
-
         <NavBar mode={mode} handleMode={handleMode} />
-
 
         <section className={`about-section ${mode}`}>
             <div>

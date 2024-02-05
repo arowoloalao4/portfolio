@@ -37,33 +37,35 @@ const ProjectsComponent = ({ }) => {
             image: './backgroundPics/bookstore-homepage.png'
         },
         {
+            name: 'School Application',
+            url: 'https://school-app-e4abd.web.app',
+            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
+            image: './asset/schoolapp.png'
+        },
+        {
+            name: 'Cofounderslab Application',
+            url: 'https://cofounderslab.com/',
+            description: 'Cofounderslab is the largest startup community on the internet that matches builders with cofounders and advisors.',
+            image: './asset/cofounder.png'
+        },
+        {
+            name: 'Quidxai Application',
+            url: 'https://quidxai.netlify.app/',
+            description: 'QuidxAi is an innovative AI developed to aid professional and new traders make the best trading and investment decisions.',
+            image: './asset/cryptoapp.png'
+        },
+        {
+            name: 'Onecap Application',
+            url: 'https://onecap.africa/',
+            description: 'Gamified savings and investment platform',
+            image: './asset/onecap.png'
+        },
+        {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
             image: './backgroundPics/portfolioscreenshot.png'
-        },
-        {
-            name: 'School Application',
-            url: 'https://school-app-e4abd.web.app/',
-            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.'
-        },
-        {
-            name: 'Invoice Application',
-            url: 'https://invoice-app-6a126.web.app/',
-            description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design. Frontend on Firebase, backend on Vercel.'
-        },
-        {
-            name: 'Todo Application',
-            url: 'https://mytodoapp-37742.web.app/',
-            description: 'Crafted a user-friendly todo list with React, demonstrating efficient task management. Frontend on Firebase.'
-        },
-        {
-            name: 'Exchange Application',
-            url: 'https://xchangepage-a9c1b.web.app/',
-            description: 'Developed a currency exchange app with real-time rates for various countries and dynamic rate generation functionality, Frontend on Firebase..'
-        }
-
-    ]);
+        }]);
 
     const [mode, handleMode] = useMode()
     const [dropdown, handleDropDown] = useDropDown()
