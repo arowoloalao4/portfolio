@@ -64,8 +64,7 @@ const ProjectsComponent = ({ }) => {
         {
             name: 'Invoice Application',
             url: 'https://invoice-app-6a126.web.app',
-            description: 'Developed a Invoice Application with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
-            image: './asset/invoiceapp.png'
+            description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design. Frontend on Firebase, backend on Vercel.'            image: './asset/invoiceapp.png'
         },
         {
             name: 'Portfolio Application',
