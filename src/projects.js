@@ -36,12 +36,7 @@ const ProjectsComponent = ({ }) => {
             description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB, Firebase (frontend), and Vercel (backend) for seamless book additions.',
             image: './backgroundPics/bookstore-homepage.png'
         },
-        {
-            name: 'School Application',
-            url: 'https://school-app-e4abd.web.app',
-            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
-            image: './asset/schoolapp.png'
-        },
+
         {
             name: 'Cofounderslab Application',
             url: 'https://cofounderslab.com/',
@@ -61,11 +56,24 @@ const ProjectsComponent = ({ }) => {
             image: './asset/onecap.png'
         },
         {
+            name: 'School Application',
+            url: 'https://school-app-e4abd.web.app',
+            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
+            image: './asset/schoolapp.png'
+        },
+        {
+            name: 'Invoice Application',
+            url: 'https://invoice-app-6a126.web.app',
+            description: 'Developed a Invoice Application with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
+            image: './asset/invoiceapp.png'
+        },
+        {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
             image: './backgroundPics/portfolioscreenshot.png'
-        }]);
+        },
+    ]);
 
     const [mode, handleMode] = useMode()
     const [dropdown, handleDropDown] = useDropDown()

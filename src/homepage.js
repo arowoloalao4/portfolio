@@ -21,11 +21,13 @@ const HomePage = ({ }) => {
 
     const p = '> self.learnAboutMe( )\nPress enter to see what I am about.'
 
+
+    // \n > self.interests
+    // ["database", "mysql", "sql server", "anime", "book"]
+
     let myDesc = `
     \n> self.currentLocation
     "London, United Kingdom"
-    \n> self.interests
-    ["database", "mysql", "sql server", "anime", "book"]
     \n> self.education
     "Engineering Management, 2022-2023, Agricultural Engineering, 2012-2020 && Udemy web development, 2019-2020"
     \n> self.skills
