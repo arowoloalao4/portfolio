@@ -10,6 +10,7 @@ import { IoRadioButtonOffSharp } from "react-icons/io5";
 import { RiParenthesesLine } from "react-icons/ri";
 import useMode from "./custom-hook/useMode";
 import NavBar from "./navbar";
+import axios from "axios";
 
 
 const HomePage = ({ }) => {
@@ -62,6 +63,7 @@ const HomePage = ({ }) => {
 
     const handleDisplay = (event) => {
         if (event.key === 'Enter') {
+            handleCounter()
             setIntroConst(p.replace(
                 'Press enter to see what I am about.',
                 'Loaded data . . .'
@@ -75,6 +77,19 @@ const HomePage = ({ }) => {
 
             document.removeEventListener('keypress', handleDisplay);
         }
+    }
+
+    const handleCounter = () => {
+        console.log('hi')
+        axios.post(`https://book-store-back-end-three.vercel.app/counts/count`,
+            {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                }
+            }).then((res) => {
+                console.log(res)
+
+            }).catch((err) => { console.log(err) })
     }
 
     useEffect(() => {
