@@ -27,17 +27,27 @@ const ProjectsComponent = ({ }) => {
         {
             name: 'Inventory Application',
             url: 'https://inventoryapp-5900c.web.app/',
-            description: "Built an efficient inventory app with React.js, Redux, Node.js, and MongoDB. Frontend deployed on Firebase, backend on Vercel.",
+            description: "Built an efficient inventory app with React.js, Redux, Node.js, and MongoDB.",
             image: './asset/inventorySc.png'
         },
         {
             name: 'Bookstore Application',
             url: 'https://bookstoreapp-389b8.web.app',
-            description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB, Firebase (frontend), and Vercel (backend) for seamless book additions.',
-            image: './backgroundPics/bookstore-homepage.png'
+            description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB for seamless book additions.',
+            image: './asset/bookstore.png'
         },
-
         {
+            name: 'School Application',
+            url: 'https://school-app-e4abd.web.app',
+            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB.',
+            image: './asset/schoolapp.png'
+        },
+        {
+            name: 'Invoice Application',
+            url: 'https://invoice-app-6a126.web.app',
+            description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design.',
+            image: './asset/invoiceapp.png'
+        }, {
             name: 'Cofounderslab Application',
             url: 'https://cofounderslab.com/',
             description: 'Cofounderslab is the largest startup community on the internet that matches builders with cofounders and advisors.',
@@ -56,22 +66,10 @@ const ProjectsComponent = ({ }) => {
             image: './asset/onecap.png'
         },
         {
-            name: 'School Application',
-            url: 'https://school-app-e4abd.web.app',
-            description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB. Frontend on Firebase, backend on Vercel.',
-            image: './asset/schoolapp.png'
-        },
-        {
-            name: 'Invoice Application',
-            url: 'https://invoice-app-6a126.web.app',
-            description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design. Frontend on Firebase, backend on Vercel.',
-            image: './asset/invoiceapp.png'
-        },
-        {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
-            image: './backgroundPics/portfolioscreenshot.png'
+            image: './asset/bookstore.png'
         },
     ]);
 

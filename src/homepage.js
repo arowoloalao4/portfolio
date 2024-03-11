@@ -13,7 +13,7 @@ import NavBar from "./navbar";
 import axios from "axios";
 
 
-const HomePage = ({ }) => {
+const HomePage = () => {
 
     const [mode, handleMode] = useMode()
     let [introConst, setIntroConst] = useState('')
@@ -32,7 +32,7 @@ const HomePage = ({ }) => {
     \n> self.education
     "Engineering Management, 2022-2023, Agricultural Engineering, 2012-2020 && Udemy web development, 2019-2020"
     \n> self.skills
-    ["HTML", "CSS", "Javascript", "React", "Bootstrap", "Chakra", "Node.js", "MySQL", "NoSQL", "Git"]
+    ["HTML", "CSS", "Javascript", "React", "Redux", "Bootstrap", "Tailwind", "Node.js", "MySQL", "NoSQL", "Git"]
     \n> self.contactMe( )
     ["LinkedIn", "Github", "Twitter/X", "Instagram", "Discord", "Telegram", "Email"]`
 
@@ -80,14 +80,12 @@ const HomePage = ({ }) => {
     }
 
     const handleCounter = () => {
-        console.log('hi')
         axios.post(`https://book-store-back-end-three.vercel.app/counts/count`,
             {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
                 }
             }).then((res) => {
-                console.log(res)
 
             }).catch((err) => { console.log(err) })
     }
