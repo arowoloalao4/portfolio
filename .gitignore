@@ -4,15 +4,13 @@
 /node_modules
 /.pnp
 .pnp.js
-/asset
+/asset/
 
 # testing
 /coverage
 
 # production
 /build
-/asset
-/backgroundPics
 
 # misc
 .DS_Store
