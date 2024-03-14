@@ -13,26 +13,6 @@
 }
 
 
-/* .navBar.lightmode a {
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    color: black;
-} */
-
-/* .navBar.lightmode section div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-
-/* .togglebtn-lightmode,
-.canceltogglebtn-lightmode,
-.navBar.lightmode section a:first-of-type {
-    display: none;
-} */
-
 .modeToggle.lightmode {
     color: inherit;
 }
@@ -56,23 +36,12 @@
     color: white
 }
 
-/* .navBar.lightmode section div:first-child {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-} */
-
-/* 
-.togglebtn-lightmode,
-.canceltogglebtn-lightmode {
-    display: none;
-} */
-
 .toggleBurger.lightmode {
     color: inherit;
 }
 
 .toggleBurger.lightmode:hover {
+    color: white;
     background-color: #3b3b3c;
 }
 
@@ -540,7 +509,7 @@ img {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    padding: 2.5rem 0;
+    padding: 1rem 0;
 }
 
 .repo-section-lightmode a:hover {

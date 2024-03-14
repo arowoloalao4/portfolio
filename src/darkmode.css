@@ -62,16 +62,6 @@
   width: 50%;
 }
 
-/* .navBar-darkmode section>div:first-child a {
-  margin: 0 2rem;
-}  */
-
-/* .togglebtn-darkmode,
-.toggleBurger,
-.navBar-darkmode section a:first-of-type {
-  display: none;
-} */
-
 .modeToggle {
   background-color: transparent;
   transition: background-color ease-in-out .2s, color ease-in-out .2s;
@@ -812,7 +802,7 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 2.5rem 0;
+  padding: 0;
 }
 
 .repo-section-darkmode a:hover {
