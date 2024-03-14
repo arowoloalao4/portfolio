@@ -75,7 +75,7 @@ const ProjectsComponent = ({ }) => {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
-            image: './asset/bookstore.png'
+            image: './asset/portfolio.png'
         },
     ]);
 
