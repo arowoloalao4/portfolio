@@ -14,21 +14,28 @@ const NavBar = ({ mode, handleMode }) => {
         <nav
             className={`navBar ${mode}`}>
 
-            <section className="nav-brand-bar">
+            <section className="flex justify-between">
 
-                <div>
-                    <a href="/">Olaoluwa</a>
+                <div className="p-3">
+                    <a href="/" className={`md:text-3xl text-2xl no-underline font-bold uppercase tracking-widest ${mode === 'darkmode' ? 'text-white' : 'text-black'}`}>Olaoluwa</a>
                 </div>
 
-                <div>
+                <div className="flex items-center px-4">
 
                     <div className="nav_linkbrand">
-                        <a href="projects">Projects</a>
-                        <a href="/repos">Repositories</a>
+                        <a href="projects" className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                         hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+                         relative p-3
+                         `}>Projects</a>
+                        <a href="/repos"
+                            className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'}  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+relative p-3
+`}>Repositories</a>
                     </div>
 
                     <div className="dropdown-toggler">
-                        <button className={`modeToggle ${mode}`}
+                        <button className={`modeToggle p-2 ${mode}`}
                             onClick={() => handleMode()}
 
                             data-name={`switch to ${mode}`}>
@@ -44,7 +51,7 @@ const NavBar = ({ mode, handleMode }) => {
 
                     <div>
                         <button
-                            className={`toggleBurger ${mode}`}
+                            className={`toggleBurger p-2 ${mode}`}
                             onClick={() => handleDropDown()}>
                             <GrMenu size={25} />
                         </button>

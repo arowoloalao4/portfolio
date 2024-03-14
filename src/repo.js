@@ -55,7 +55,16 @@ const RepoPage = ({ }) => {
         {
             title: 'Invoice Server',
             link: 'https://github.com/Ollah16/invoiceBackEnd.git'
+        },
+        {
+            title: 'Tradex Application',
+            link: 'https://github.com/Ollah16/tradeX.git'
+        },
+        {
+            title: 'Tradex Server',
+            link: 'https://github.com/Ollah16/tradeXserver.git'
         }
+
     ]);
 
     const [mode, handleMode] = useMode()
@@ -67,7 +76,7 @@ const RepoPage = ({ }) => {
 
         <section className={mode === 'lightmode' ?
             'projects-section-lightmode' : 'projects-section-darkmode'}>
-            <h2>My Repositories</h2>
+            <h2>Repositories</h2>
         </section>
 
         <section className={mode === 'lightmode' ?

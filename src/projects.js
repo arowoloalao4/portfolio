@@ -23,7 +23,13 @@ const ProjectsComponent = ({ }) => {
 
     const [myProjects, setMyProjects] = useState([
         // { name: 'Da-Manager: Pioneering Digital Solutions', url: 'https://da-manager.com' },
-        // { name: 'Medillery: Empowering Designers, Enriching Society', url: 'https://medillery.com' },
+        // { name: 'Medillery: Empowering Designers, Enriching Society', url: 'https://medillery.com' },,
+        {
+            name: 'Tradex Application',
+            url: 'https://trade-x-omega.vercel.app/',
+            description: "Developed a crypto converter with React.js and Node.js.",
+            image: './asset/tradexapp.png'
+        },
         {
             name: 'Inventory Application',
             url: 'https://inventoryapp-5900c.web.app/',

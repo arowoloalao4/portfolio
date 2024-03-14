@@ -117,7 +117,7 @@ const HomePage = () => {
         <section className={mode === 'lightmode' ?
             'selfIntro-lightmode-section' : 'selfIntro-darkmode-section'}>
             <div>
-                <span>
+                <span className="flex">
                     <IoRadioButtonOffSharp className='radioone' size={13} />
                     <IoRadioButtonOffSharp className='radiotwo' size={13} />
                     <IoRadioButtonOffSharp className='radiothree me-0' size={13} />
