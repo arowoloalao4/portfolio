@@ -12,25 +12,25 @@ const NavBar = ({ mode, handleMode }) => {
 
     return (
         <nav
-            className={`navBar ${mode}`}>
+            className={`navBar px-4 ${mode}`}>
 
-            <section className="flex justify-between">
+            <section className="flex justify-between items-center">
 
-                <div className="p-3">
-                    <a href="/" className={`md:text-3xl text-2xl no-underline font-bold uppercase tracking-widest ${mode === 'darkmode' ? 'text-white' : 'text-black'}`}>Olaoluwa</a>
+                <div className="">
+                    <a href="/" className={`md:text-3xl py-3 text-2xl no-underline align-bottom inline-block font-bold uppercase tracking-widest ${mode === 'darkmode' ? 'text-white' : 'text-black'}`}>Olaoluwa</a>
                 </div>
 
-                <div className="flex items-center px-4">
+                <div className="flex items-center">
 
-                    <div className="nav_linkbrand">
-                        <a href="projects" className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                    <div className="nav_linkbrand h-full">
+                        <a href="projects" className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
                          hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
-                         relative p-3
+                         relative py-4 inline-block 
                          `}>Projects</a>
                         <a href="/repos"
-                            className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'}  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                            className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
 hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
-relative p-3
+relative py-4 inline-block
 `}>Repositories</a>
                     </div>
 
