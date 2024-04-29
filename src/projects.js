@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 import { Link } from 'react-router-dom';
-import { MdLightMode } from "react-icons/md";
-import { MdOutlineNightlight } from "react-icons/md";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { TfiHtml5 } from "react-icons/tfi";
 import { FaCss3Alt } from "react-icons/fa6";
@@ -12,10 +10,7 @@ import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { FaCode } from "react-icons/fa";
 import { MdOutlineMail } from "react-icons/md";
-import { BiX } from "react-icons/bi";
 import useMode from './custom-hook/useMode';
-import { GrMenu } from "react-icons/gr";
-import useDropDown from './custom-hook/useDropdown';
 import NavBar from './navbar';
 
 
@@ -34,7 +29,7 @@ const ProjectsComponent = ({ }) => {
             name: 'Journey AI Application',
             url: 'https://tripbuddy-phi.vercel.app/',
             description: "Developed a journey AI buddy for children with next.js.",
-            image: './asset/journeybuddy.png'
+            image: './asset/Journeybuddy.png'
         },
         {
             name: 'Inventory Application',
@@ -86,7 +81,6 @@ const ProjectsComponent = ({ }) => {
     ]);
 
     const [mode, handleMode] = useMode()
-    const [dropdown, handleDropDown] = useDropDown()
 
     return (<Container fluid className={`homepage ${mode}`}>
 
