@@ -31,6 +31,12 @@ const ProjectsComponent = ({ }) => {
             image: './asset/tradexapp.png'
         },
         {
+            name: 'Journey AI Application',
+            url: 'https://tripbuddy-phi.vercel.app/',
+            description: "Developed a journey AI buddy for children with next.js.",
+            image: './asset/journeybuddy.png'
+        },
+        {
             name: 'Inventory Application',
             url: 'https://inventoryapp-5900c.web.app/',
             description: "Built an efficient inventory app with React.js, Redux, Node.js, and MongoDB.",

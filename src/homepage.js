@@ -22,10 +22,6 @@ const HomePage = () => {
 
     const p = '> self.learnAboutMe( )\nPress enter to see what I am about.'
 
-
-    // \n > self.interests
-    // ["database", "mysql", "sql server", "anime", "book"]
-
     let myDesc = `
     \n> self.currentLocation
     "London, United Kingdom"
