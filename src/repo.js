@@ -16,6 +16,11 @@ const RepoPage = ({ }) => {
             title: 'Bookstore Application',
             link: 'https://github.com/Ollah16/bookstore.git'
         },
+
+        {
+            title: 'AI Journey Application',
+            link: 'https://github.com/Ollah16/tripbuddy.git'
+        },
         {
             title: 'Inventory Application',
             link: 'https://github.com/Ollah16/app_inventory.git'
