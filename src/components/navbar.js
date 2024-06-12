@@ -1,46 +1,46 @@
-import React from "react";
-import useMode from "./custom-hook/useMode";
-import useDropDown from "./custom-hook/useDropdown";
+import React, { useState } from "react";
 import { BiX } from "react-icons/bi";
 import { GrMenu } from "react-icons/gr";
 import { MdLightMode } from "react-icons/md";
 import { MdOutlineNightlight } from "react-icons/md";
+import { useThemeContext } from "../context/themeContext";
 
-const NavBar = ({ mode, handleMode }) => {
+const NavBar = () => {
 
-    const [dropdown, handleDropDown] = useDropDown()
+    const { pageTheme, handleTheme } = useThemeContext()
+    const [dropdown, setDropDown] = useState(false)
 
     return (
         <nav
-            className={`navBar px-4 ${mode}`}>
+            className={`navBar px-4 ${pageTheme}`}>
 
             <section className="flex justify-between items-center">
 
                 <div className="">
-                    <a href="/" className={`md:text-3xl py-3 text-2xl no-underline align-bottom inline-block font-bold uppercase tracking-widest ${mode === 'darkmode' ? 'text-white' : 'text-black'}`}>Olaoluwa</a>
+                    <a href="/" className={`md:text-3xl py-3 text-2xl no-underline align-bottom inline-block font-bold uppercase tracking-widest ${pageTheme === 'darkmode' ? 'text-white' : 'text-black'}`}>Olaoluwa</a>
                 </div>
 
                 <div className="flex items-center">
 
                     <div className="nav_linkbrand h-full">
-                        <a href="projects" className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                        <a href="projects" className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
                          hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
                          relative py-4 inline-block 
                          `}>Projects</a>
                         <a href="/repos"
-                            className={`${mode == 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                            className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
 hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
 relative py-4 inline-block
 `}>Repositories</a>
                     </div>
 
                     <div className="dropdown-toggler">
-                        <button className={`modeToggle p-2 ${mode}`}
-                            onClick={() => handleMode()}
+                        <button className={`themeToggle p-2 ${pageTheme}`}
+                            onClick={() => handleTheme()}
 
-                            data-name={`switch to ${mode}`}>
+                            data-name={`switch to ${pageTheme}`}>
 
-                            {mode === 'lightmode' ?
+                            {pageTheme === 'lightmode' ?
                                 <MdOutlineNightlight size={25} />
                                 :
                                 <MdLightMode size={25} />
@@ -51,8 +51,8 @@ relative py-4 inline-block
 
                     <div>
                         <button
-                            className={`toggleBurger p-2 ${mode}`}
-                            onClick={() => handleDropDown()}>
+                            className={`toggleBurger p-2 ${pageTheme}`}
+                            onClick={() => setDropDown(prev => !prev)}>
                             <GrMenu size={25} />
                         </button>
                     </div>
@@ -60,8 +60,8 @@ relative py-4 inline-block
             </section>
 
             <section className={`dropdown ${dropdown ?
-                mode :
-                'inactive'}`}>
+                pageTheme :
+                null}`}>
 
                 <div >
 
@@ -75,8 +75,8 @@ relative py-4 inline-block
 
                     <div>
 
-                        <button onClick={() => handleDropDown()}
-                            className={`togglebtn ${mode}`}>
+                        <button onClick={() => setDropDown(prev => !prev)}
+                            className={`togglebtn ${pageTheme}`}>
                             <BiX size={32} />
 
                         </button>

@@ -1,17 +1,11 @@
-import React, { useState } from "react";
-import { Container } from "react-bootstrap";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaGithubSquare } from "react-icons/fa";
-import { FaCode } from "react-icons/fa";
-import { MdOutlineMail } from "react-icons/md";
-import { Link } from "react-router-dom";
-import useMode from "./custom-hook/useMode";
-import NavBar from "./navbar";
+import React from 'react'
+import { useThemeContext } from '../../context/themeContext';
+import { Link } from 'react-router-dom';
 
+const RepoLinks = () => {
+    const { pageTheme } = useThemeContext()
 
-const RepoPage = ({ }) => {
-
-    const [gitRepos, setGitRepos] = useState([
+    const gitRepos = [
         {
             title: 'Bookstore Application',
             link: 'https://github.com/Ollah16/bookstore.git'
@@ -70,21 +64,10 @@ const RepoPage = ({ }) => {
             link: 'https://github.com/Ollah16/tradeXserver.git'
         }
 
-    ]);
+    ];
 
-    const [mode, handleMode] = useMode()
-
-    return (<Container fluid
-        className={`homepage ${mode}`}>
-
-        <NavBar mode={mode} handleMode={handleMode} />
-
-        <section className={mode === 'lightmode' ?
-            'projects-section-lightmode' : 'projects-section-darkmode'}>
-            <h2>Repositories</h2>
-        </section>
-
-        <section className={mode === 'lightmode' ?
+    return (
+        <section className={pageTheme === 'lightmode' ?
             'repo-section-lightmode' : 'repo-section-darkmode'}>
 
             {gitRepos.map((git, index) => (
@@ -96,38 +79,7 @@ const RepoPage = ({ }) => {
             ))}
 
         </section>
-
-        <section className={mode === 'lightmode' ?
-            'footer-lightmodesection' : 'footer-darkmodesection'}>
-            <div>
-                <FaCode size={19} className={mode === 'lightmode' ?
-                    "lightmode-link" : 'darkmode-link me-2'} />
-                Web Developer
-            </div>
-
-            <div>
-                <Link to={'mailto:olaoluwa_oke@outlook.com'}
-                    data-name="Email">
-                    <MdOutlineMail size={19} className={mode === 'lightmode' ?
-                        "lightmode-link" : 'darkmode-link'}
-                    />
-                </Link>
-
-                <Link to={'https://www.linkedin.com/in/olaoluwa-oke-478a7b298/'}
-                    data-name="Linkedln">
-                    <FaLinkedin size={19} className={mode === 'lightmode' ?
-                        "lightmode-link" : 'darkmode-link'} />
-                </Link>
-
-                <Link to={'https://github.com/Ollah16/'}
-                    data-name="GitHub">
-                    <FaGithubSquare size={19} className={mode === 'lightmode' ?
-                        "lightmode-link" : 'darkmode-link'} />
-                </Link>
-            </div>
-        </section >
-
-    </Container>)
+    )
 }
 
-export default RepoPage
+export default RepoLinks

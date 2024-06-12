@@ -1,26 +1,26 @@
-import './darkmode.css';
-import './lightmode.css'
+import './styles/darkmode.css';
+import './styles/lightmode.css'
 import { Route, Routes } from 'react-router-dom';
-import HomePage from './homepage';
 import 'bootstrap/dist/css/bootstrap.min.css'
-import ProjectsComponent from './projects';
-import { useEffect, useState } from 'react';
-import RepoPage from './repo';
+import { ThemeContext } from './context/themeContext';
+import RepositoryPage from './pages/repo';
+import ProjectsPage from './pages/projects';
+import HomePage from './pages/homepage';
 
 function App() {
 
   return (
-    <Routes>
-      <Route path='/' element={<HomePage
-      />}></Route>
+    <ThemeContext>
+      <Routes>
 
-      <Route path='/projects' element={<ProjectsComponent
-      />}></Route >
+        <Route path='/' element={<HomePage />} />
 
-      <Route path='/repos' element={<RepoPage
-      />}></Route>
-    </Routes >
-  );
+        <Route path='/projects' element={<ProjectsPage />} />
+
+        <Route path='/repos' element={<RepositoryPage />} />
+
+      </Routes >
+    </ThemeContext>);
 }
 
 export default App;
