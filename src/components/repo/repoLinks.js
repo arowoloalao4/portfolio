@@ -73,8 +73,6 @@ const RepoLinks = () => {
             {gitRepos.map((git, index) => (
                 <Link to={git.link} key={index}>
                     <span>{git.title}</span>
-                    <span>{git.description}</span>
-                    <span>{git.language}</span>
                 </Link>
             ))}
 
