@@ -1,33 +1,26 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useState, useMemo, useCallback } from 'react';
 
-const PageTheme = createContext()
+const PageTheme = createContext();
 
 export const ThemeContext = ({ children }) => {
+    const [pageTheme, setTheme] = useState(() => {
+        const storedTheme = localStorage.getItem('pageTheme');
+        return storedTheme ? storedTheme : 'darkmode';
+    });
 
-    let [pageTheme, setTheme] = useState();
+    const handleTheme = useCallback(() => {
+        const newTheme = pageTheme === 'lightmode' ? 'darkmode' : 'lightmode';
+        setTheme(newTheme);
+        localStorage.setItem('pageTheme', newTheme);
+    }, [pageTheme]);
 
-    useEffect(() => {
-
-        const loadTheme = localStorage.pageTheme ? localStorage.getItem('pageTheme') : 'darkmode'
-
-        setTheme(loadTheme)
-
-    }, [])
-
-    const handleTheme = () => {
-        const newTheme = pageTheme === 'lightmode' ? 'darkmode' : 'lightmode'
-        setTheme(newTheme)
-        localStorage.setItem('pageTheme', newTheme)
-
-    };
-
+    const contextValue = useMemo(() => ({ pageTheme, handleTheme }), [pageTheme, handleTheme]);
 
     return (
-        <PageTheme.Provider value={{ pageTheme, handleTheme }}>
+        <PageTheme.Provider value={contextValue}>
             {children}
         </PageTheme.Provider>
-    )
-}
+    );
+};
 
-
-export const useThemeContext = () => useContext(PageTheme)
+export const useThemeContext = () => useContext(PageTheme);

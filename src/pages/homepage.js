@@ -54,7 +54,6 @@ const HomePage = () => {
 
     }, [p])
 
-
     useEffect(() => {
 
         const handleDisplay = (event) => {

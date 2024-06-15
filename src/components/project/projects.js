@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useThemeContext } from '../../context/themeContext';
 import ProjectDescr from './projectDescr';
 import ProjectBg from './projectBg';
@@ -72,17 +72,16 @@ const Projects = () => {
         },
     ];
 
-
+    const allProjects = useMemo(() => myProjects, [myProjects])
 
     return (
         <section className='description-section'>
-            {myProjects.map((project, index) => (
+            {allProjects.map((project, index) => (
                 <div className={`description ${pageTheme}`} key={index}>
                     <ProjectBg project={project} />
                     <ProjectDescr project={project} />
                 </div>
-            ))
-            }
+            ))}
 
         </section >
     )

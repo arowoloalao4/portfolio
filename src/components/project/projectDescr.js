@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import { Link } from 'react-router-dom';
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { TfiHtml5 } from "react-icons/tfi";
@@ -6,7 +6,7 @@ import { FaCss3Alt } from "react-icons/fa6";
 import { TbBrandJavascript } from "react-icons/tb";
 import { useThemeContext } from '../../context/themeContext';
 
-const ProjectDescr = ({ project }) => {
+const ProjectDescr = memo(function ({ project }) {
 
     const { pageTheme } = useThemeContext()
     const { url, name, description } = project
@@ -35,6 +35,6 @@ const ProjectDescr = ({ project }) => {
             <p>{description}</p>
         </Link>
     </section>)
-}
+})
 
 export default ProjectDescr
