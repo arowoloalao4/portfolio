@@ -14,6 +14,7 @@ export const ThemeContext = ({ children }) => {
         localStorage.setItem('pageTheme', newTheme);
     }, [pageTheme]);
 
+
     const contextValue = useMemo(() => ({ pageTheme, handleTheme }), [pageTheme, handleTheme]);
 
     return (
