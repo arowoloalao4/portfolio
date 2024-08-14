@@ -4,11 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeContext } from './context/themeContext';
 import HomePage from './pages/homepage'
-import { lazy } from 'react';
 import { DescriptionProvider } from './context/userContext';
-
-const ProjectsPage = lazy(() => import('./pages/projects'))
-const RepositoryPage = lazy(() => import('./pages/repo'))
+import ProjectsPage from './pages/projects'
+import RepositoryPage from './pages/repo'
 
 function App() {
 

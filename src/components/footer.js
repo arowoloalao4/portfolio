@@ -26,12 +26,6 @@ const Footer = () => {
                 />
             </Link>
 
-            <Link to={'https://www.linkedin.com/in/olaoluwa-oke-478a7b298/'}
-                data-name="Linkedln">
-                <FaLinkedin size={19} className={pageTheme === 'lightmode' ?
-                    "lightmode-link" : 'darkmode-link'} />
-            </Link>
-
             <Link to={'https://github.com/Ollah16/'}
                 data-name="GitHub">
                 <FaGithubSquare size={19} className={pageTheme === 'lightmode' ?
