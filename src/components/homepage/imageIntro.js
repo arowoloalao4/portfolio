@@ -1,6 +1,6 @@
 import React from 'react'
 import { useThemeContext } from '../../context/themeContext'
-import photo from '../../asset/photo.jpg'
+import avatar from '../../asset/avatar.jpg'
 
 const ImageIntro = () => {
 
@@ -9,7 +9,7 @@ const ImageIntro = () => {
     return (
         <section className={`about-section ${pageTheme}`}>
             <div>
-                <img src={require(`${photo}`)} alt="...." />
+                <img src={avatar} alt="...." />
             </div>
             <div >
                 <h2>Hi, I'm Olaoluwa!</h2>
