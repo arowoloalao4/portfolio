@@ -14,61 +14,61 @@ const Projects = () => {
             name: 'Tradex Application',
             url: 'https://trade-x-omega.vercel.app/',
             description: "Developed a crypto converter with React.js and Node.js.",
-            image: require('../../asset/tradexapp.png')
+            image: '../../asset/tradexapp.png'
         },
         {
             name: 'Journey AI Application',
             url: 'https://tripbuddy-phi.vercel.app/',
             description: "Developed a journey AI buddy for children with next.js.",
-            image: require('../../asset/journeybuddy.png')
+            image: '../../asset/journeybuddy.png'
         },
         {
             name: 'Inventory Application',
             url: 'https://inventoryapp-5900c.web.app/',
             description: "Built an efficient inventory app with React.js, Redux, Node.js, and MongoDB.",
-            image: require('../../asset/inventorySc.png')
+            image: '../../asset/inventorySc.png'
         },
         {
             name: 'Bookstore Application',
             url: 'https://bookstoreapp-389b8.web.app',
             description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB for seamless book additions.',
-            image: require('../../asset/bookstore.png')
+            image: '../../asset/bookstore.png'
         },
         {
             name: 'School Application',
             url: 'https://school-app-e4abd.web.app',
             description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB.',
-            image: require('../../asset/schoolapp.png')
+            image: '../../asset/schoolapp.png'
         },
         {
             name: 'Invoice Application',
             url: 'https://invoice-app-6a126.web.app',
             description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design.',
-            image: require('../../asset/invoiceapp.png')
+            image: '../../asset/invoiceapp.png'
         },
         {
             name: 'Cofounderslab Application',
             url: 'https://cofounderslab.com/',
             description: 'Cofounderslab is the largest startup community on the internet that matches builders with cofounders and advisors.',
-            image: require('../../asset/cofounder.png')
+            image: '../../asset/cofounder.png'
         },
         {
             name: 'Quidxai Application',
             url: 'https://quidxai.netlify.app/',
             description: 'QuidxAi is an innovative AI developed to aid professional and new traders make the best trading and investment decisions.',
-            image: require('../../asset/cryptoapp.png')
+            image: '../../asset/cryptoapp.png'
         },
         {
             name: 'Onecap Application',
             url: 'https://onecap.africa/',
             description: 'Gamified savings and investment platform',
-            image: require('../../asset/onecap.png')
+            image: '../../asset/onecap.png'
         },
         {
             name: 'Portfolio Application',
             url: 'https://myportfolio-8bb3f.web.app',
             description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
-            image: require('../../asset/portfolio.png')
+            image: '../../asset/portfolio.png'
         },
     ];
 

@@ -17,7 +17,7 @@ const ProjectBg = ({ project }) => {
             </div>
 
             <div className='project-image-div'>
-                {image && <img src={image} alt='...' />}
+                {image && <img src={require(image)} alt='...' />}
             </div>
         </section>
     )
