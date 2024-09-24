@@ -1,6 +1,6 @@
 import React from 'react'
 import { useThemeContext } from '../../context/themeContext'
-import avatar from '../../asset/avatar.jpg'
+// import avatar from '../../asset/avatar.jpg'
 
 const ImageIntro = () => {
 
