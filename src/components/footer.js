@@ -1,6 +1,5 @@
 import React from 'react'
 import { MdOutlineMail } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa6";
 import { FaGithubSquare } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { FaCode } from "react-icons/fa";
