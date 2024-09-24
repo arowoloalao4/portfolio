@@ -8,7 +8,7 @@ const ImageIntro = () => {
     return (
         <section className={`about-section ${pageTheme}`}>
             <div>
-                <img src={require('../../asset/photo.jpg')} alt="...." />
+                {/* <img src={require('../../asset/photo.jpg')} alt="...." /> */}
             </div>
             <div >
                 <h2>Hi, I'm Olaoluwa!</h2>
