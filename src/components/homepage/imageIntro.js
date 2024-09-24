@@ -9,7 +9,7 @@ const ImageIntro = () => {
     return (
         <section className={`about-section ${pageTheme}`}>
             <div>
-                <img src={avatar} alt="...." />
+                {/* <img src={avatar} alt="...." /> */}
             </div>
             <div >
                 <h2>Hi, I'm Olaoluwa!</h2>
