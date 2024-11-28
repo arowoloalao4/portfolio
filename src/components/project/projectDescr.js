@@ -12,7 +12,7 @@ const ProjectDescr = memo(function ({ project }) {
     const { url, name, description } = project
 
 
-    return (<section className={`projects-description ${pageTheme}`}>
+    return (<section className={`projects__description ${pageTheme}`}>
 
         <Link to={url}>
 
@@ -22,7 +22,7 @@ const ProjectDescr = memo(function ({ project }) {
                 </h4>
 
                 <span className='text-white' >
-                    <FaExternalLinkAlt className='project-link' />
+                    <FaExternalLinkAlt className='project__link' />
                 </span>
             </div>
 

@@ -103,13 +103,20 @@ img {
     border-radius: 3%;
 }
 
-.projects-section-lightmode {
+.projects__section {
     text-align: center;
     padding: 2em 0;
 }
 
+.projects__section p,
+.about-section p {
+    font-size: 1.3rem;
+    font-weight: lighter;
+    padding: 0 .7em;
+}
+
 .about-section.lightmode h2,
-.projects-section-lightmode h2 {
+.projects__section.lightmode h2 {
     font-size: 4rem;
     font-weight: 500;
     color: black;
@@ -117,11 +124,8 @@ img {
 }
 
 .about-section.lightmode p,
-.projects-section-lightmode p {
-    font-size: 1.3rem;
-    font-weight: lighter;
+.projects__section.lightmode p {
     color: rgb(35, 34, 34);
-    padding: 0 .7em;
 }
 
 .about-section.lightmode>div:last-of-type {
@@ -160,14 +164,14 @@ img {
 }
 
 
-.selfIntro-lightmode-section {
+.intro__section.lightmode {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 3rem;
 }
 
-.selfIntro-lightmode-section div:first-of-type {
+.intro__section.lightmode div:first-of-type {
     height: 1rem;
     width: 70%;
     display: flex;
@@ -179,7 +183,7 @@ img {
     padding: .9rem;
 }
 
-.selfIntro-lightmode-section div:last-of-type {
+.intro__section.lightmode div:last-of-type {
     height: 37rem;
     width: 70%;
     background-color: rgba(71, 69, 69, 0.7);
@@ -191,7 +195,7 @@ img {
     overflow: hidden;
 }
 
-.selfIntro-lightmode-section div span:nth-of-type(2) {
+.intro__section.lightmode div span:nth-of-type(2) {
     color: black;
     font-weight: bolder;
 }
@@ -230,7 +234,7 @@ img {
     margin: 0 .2em;
 }
 
-.projects-description.lightmode {
+.projects__description.lightmode {
     background-color: white;
 }
 
@@ -244,16 +248,16 @@ img {
 
 @media (max-width: 992px) {
 
-    .selfIntro-lightmode-section {
+    .intro__section.lightmode {
         padding: .3rem 0;
     }
 
-    .selfIntro-lightmode-section div:first-of-type {
+    .intro__section.lightmode div:first-of-type {
         display: flex;
         align-items: center;
     }
 
-    .selfIntro-lightmode-section div:last-of-type {
+    .intro__section.lightmode div:last-of-type {
         height: 40rem;
         width: 70%;
         padding: .7rem .9em;
@@ -294,7 +298,7 @@ img {
         background: linear-gradient(45deg, #548a98, #19262c, #627484);
     }
 
-    .projects-description.lightmode {
+    .projects__description.lightmode {
         border-bottom-left-radius: 0.7rem;
         border-bottom-right-radius: 0.7rem;
         border-top-left-radius: 0;
@@ -307,47 +311,47 @@ img {
 
 }
 
-.projects-description.lightmode p {
+.projects__description.lightmode p {
     color: black;
     font-weight: light;
     padding: .3em 0;
     font-size: 95%;
 }
 
-.projects-description.lightmode h4 {
+.projects__description.lightmode h4 {
     display: inline;
     font-weight: bold;
     color: black;
 }
 
-.projects-description.lightmode:hover {
+.projects__description.lightmode:hover {
     background-color: rgba(255, 255, 255, .8);
 }
 
-.project-link {
+.project__link {
     font-size: 1.3rem;
     color: #6da3b1;
     transition: color ease-in-out 200ms;
 }
 
-.projects-description:hover .project-link {
+.projects__description:hover .project__link {
     color: rgba(109, 163, 177, .9);
 }
 
-.projects-description.lightmode div:nth-of-type(1) {
+.projects__description.lightmode div:nth-of-type(1) {
     display: flex;
     flex-direction: row;
     align-items: normal;
     justify-content: space-between;
 }
 
-.projects-description.lightmode div:nth-of-type(2) {
+.projects__description.lightmode div:nth-of-type(2) {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-.projects-description.lightmode span {
+.projects__description.lightmode span {
     border-radius: .4rem;
     padding: .2em .5em;
     font-size: 1em;
@@ -357,18 +361,6 @@ img {
     align-items: center;
     margin: 0 .1em;
 }
-
-/* .projects-description.lightmode span:nth-of-type(1) {
-    background-color: #E44D26;
-}
-
-.projects-description.lightmode span:nth-of-type(2) {
-    background-color: #2965f1;
-}
-
-.projects-description.lightmode span:nth-of-type(3) {
-    background-color: #f0db4f;
-} */
 
 
 @media(min-width: 768px) {
@@ -433,7 +425,7 @@ img {
 
 @media(max-width: 768px) {
 
-    .selfIntro-lightmode-section {
+    .intro__section.lightmode {
         display: none;
     }
 

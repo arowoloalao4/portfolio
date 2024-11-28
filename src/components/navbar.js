@@ -4,6 +4,7 @@ import { GrMenu } from "react-icons/gr";
 import { MdLightMode } from "react-icons/md";
 import { MdOutlineNightlight } from "react-icons/md";
 import { useThemeContext } from "../context/themeContext";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
 
@@ -23,15 +24,15 @@ const NavBar = () => {
                 <div className="flex items-center">
 
                     <div className="nav_linkbrand h-full">
-                        <a href="projects" className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
-                         hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+                        <NavLink to={"/projects"} className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : ''} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0 hover:after:left-0
+                         hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
                          relative py-4 inline-block 
-                         `}>Projects</a>
-                        <a href="/repos"
-                            className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
-hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+                         `}>Projects</NavLink>
+                        <NavLink to={"/repos"}
+                            className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : ''} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0 hover:after:left-0
+hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
 relative py-4 inline-block
-`}>Repositories</a>
+`}>Repositories</NavLink>
                     </div>
 
                     <div className="dropdown-toggler">

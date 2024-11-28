@@ -17,8 +17,8 @@ const HomePage = () => {
 
         <ImageIntro />
 
-        <section className={pageTheme === 'lightmode' ?
-            'selfIntro-lightmode-section' : 'selfIntro-darkmode-section'}>
+        <section className={`intro__section ${pageTheme === 'lightmode' ?
+            'lightmode' : 'darkmode'}`}>
 
             <DescrBar />
 

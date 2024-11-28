@@ -5,8 +5,8 @@ const ProjectIntro = () => {
 
     const { pageTheme } = useThemeContext()
 
-    return (<section className={pageTheme === 'lightmode' ?
-        'projects-section-lightmode' : 'projects-section-darkmode'}>
+    return (<section className={`projects__section ${pageTheme === 'lightmode' ?
+        'lightmode' : 'darkmode'}`}>
 
         <h2>My projects</h2>
         <p>Highlights from my projects</p>

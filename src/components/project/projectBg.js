@@ -17,7 +17,7 @@ const ProjectBg = ({ project }) => {
             </div>
 
             <div className='project-image-div'>
-                <img src={image} alt='...' />
+                <img src={image} alt='...' loading='eager' />
             </div>
         </section>
     )

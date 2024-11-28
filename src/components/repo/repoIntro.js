@@ -6,8 +6,8 @@ const RepoIntro = () => {
     const { pageTheme } = useThemeContext()
 
     return (
-        <section className={pageTheme === 'lightmode' ?
-            'projects-section-lightmode' : 'projects-section-darkmode'}>
+        <section className={`projects__section ${pageTheme === 'lightmode' ?
+            'lightmode' : 'darkmode'}`}>
             <h2>Repositories</h2>
         </section>
     )
