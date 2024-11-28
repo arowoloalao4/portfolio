@@ -24,15 +24,26 @@ const NavBar = () => {
                 <div className="flex items-center">
 
                     <div className="nav_linkbrand h-full">
-                        <NavLink to={"/projects"} className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : ''} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0 hover:after:left-0
-                         hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+                        <a href="projects" className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+                         hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
                          relative py-4 inline-block 
+                         `}>Projects</a>
+                        <a href="/repos"
+                            className={`${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0
+hover:after:left-0 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+relative py-4 inline-block
+`}>Repositories</a>
+
+                        {/* <NavLink to={"/projects"}
+                            className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : 'after:left-2/4'} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:bottom-0 hover:after:left-0
+                         hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+                         relative overflow-hidden py-4 inline-block 
                          `}>Projects</NavLink>
                         <NavLink to={"/repos"}
-                            className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : ''} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:left-2/4 after:bottom-0 hover:after:left-0
+                            className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : 'after:left-2/4'} ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] after:inline-block after:absolute after:h-1 after:w-0 after:bottom-0 hover:after:left-0
 hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
-relative py-4 inline-block
-`}>Repositories</NavLink>
+relative overflow-hidden py-4 inline-block
+`}>Repositories</NavLink> */}
                     </div>
 
                     <div className="dropdown-toggler">
