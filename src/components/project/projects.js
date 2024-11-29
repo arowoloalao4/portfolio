@@ -68,7 +68,7 @@ export const loadProjects = () => [
     },
 ];
 
-const Projects = () => {
+const Projects = ({ }) => {
 
     const { pageTheme } = useThemeContext()
     const projects = loadProjects()

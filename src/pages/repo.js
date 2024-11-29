@@ -4,18 +4,19 @@ import NavBar from "../components/navbar";
 import { useThemeContext } from "../context/themeContext";
 import Footer from "../components/footer";
 import RepoLinks from "../components/repo/repoLinks";
-import RepoIntro from "../components/repo/repoIntro";
+import Header from "../components/header";
 
 
 const RepositoryPage = () => {
 
     const { pageTheme } = useThemeContext()
+    const h2 = "Repositories"
 
     return (<Container fluid className={`homepage ${pageTheme}`}>
 
         <NavBar />
 
-        <RepoIntro />
+        <Header h2={h2} />
 
         <RepoLinks />
 

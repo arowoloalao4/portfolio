@@ -1,6 +1,7 @@
 import React from 'react'
 import { useThemeContext } from '../../context/themeContext'
 import avatar from '../../assets/avatar.jpg'
+import Header from '../header'
 
 const ImageIntro = () => {
 
@@ -15,6 +16,7 @@ const ImageIntro = () => {
                 <h2>Hi, I'm Olaoluwa!</h2>
                 <p>Welcome to my portfolio website! I am a passionate Front End developer with expertise in HTML, CSS, JavaScript, React, and more. I love turning ideas into interactive and user-friendly websites. My commitment is to architect solutions that are not just functional, but intuitively beautiful.
                 </p>
+                <Header />
             </div>
         </section>
     )
