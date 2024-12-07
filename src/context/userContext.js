@@ -13,7 +13,7 @@ export const DescriptionProvider = ({ children }) => {
 
         const handleCounter = (event) => {
             if (event?.key === 'Enter') {
-                axios.post(`https://book-store-back-end-three.vercel.app/counts/count`,
+                axios.post(`https://book-store-back-end-three.vercel.app/metrics/clicks`,
                     {
                         headers: {
                             'Content-Type': 'application/x-www-form-urlencoded',
