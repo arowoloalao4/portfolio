@@ -1,9 +1,7 @@
 import React from 'react'
 import { useAboutMe } from '../../context/userContext'
-
 const DescriptionSection = () => {
     const { introduction, description } = useAboutMe()
-
     return (
         <section className='selfdescription-section'>
             <div className='selfdescription-container'>
@@ -11,9 +9,7 @@ const DescriptionSection = () => {
                     <span key={index} className={`${char === '>' ? 'icon' : ''}`}>
                         {char}
                     </span>
-
                 ))}
-
                 {description.split('').map((char, index) => (
                     <span key={index} className={`${char === '>' ? 'icon' : ''}`}>
                         {char}
@@ -22,5 +18,4 @@ const DescriptionSection = () => {
             </div>
         </section>)
 }
-
 export default DescriptionSection
