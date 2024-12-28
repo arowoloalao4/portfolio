@@ -1,19 +1,17 @@
 import React from 'react'
-import { useThemeContext } from '../../context/themeContext'
-import { useDescription } from '../../context/userContext'
+import DescriptionSection from './descriptionSection'
+import DescriptionNav from '../descriptionNav'
+import { RiParenthesesLine } from "react-icons/ri";
 
 const Introduction = () => {
 
-    const { pageTheme } = useThemeContext()
-    const { introduction } = useDescription()
-
     return (
-        introduction && introduction.split('').map((char, index) => (
-            <span key={index} className={`selfintro-section ${char === '>' ? 'icon' :
-                pageTheme === 'lightmode' ? 'normal-lightmode' : 'normal-darkmode'}`}>
-                {char}
-            </span>
-        ))
+        <section className={`${'introduction-section'}`}>
+            <div className='introduction-container'>
+                <DescriptionNav size={13} navLabel="self.Introduction" labelIcon={<RiParenthesesLine size={20} />} />
+                <DescriptionSection />
+            </div>
+        </section >
     )
 }
 

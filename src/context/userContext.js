@@ -3,7 +3,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const UserContext = createContext(null)
 
-export const DescriptionProvider = ({ children }) => {
+export const AboutMeProvider = ({ children }) => {
 
     const [introduction, setIntroduction] = useState('')
     const [description, setDescription] = useState('')
@@ -93,4 +93,4 @@ export const DescriptionProvider = ({ children }) => {
     )
 }
 
-export const useDescription = () => useContext(UserContext)
+export const useAboutMe = () => useContext(UserContext)

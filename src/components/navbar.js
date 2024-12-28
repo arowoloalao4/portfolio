@@ -13,7 +13,7 @@ const NavBar = () => {
 
     return (
         <nav
-            className={`navBar px-4 ${pageTheme}`}>
+            className={`navBar px-4`}>
 
             <section className="flex justify-between items-center">
 
@@ -23,27 +23,27 @@ const NavBar = () => {
 
                 <div className="flex items-center">
 
-                    <div className="nav_linkbrand h-full">
+                    <div className="navlink h-full">
 
 
                         <NavLink to={"/projects"}
                             className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : 'after:left-2/4 hover:after:left-0'} 
-                            ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal after:content-[''] 
+                             leading-normal after:content-[''] 
                             after:inline-block after:absolute after:h-1 after:w-0 after:bottom-0 
-                         hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
-                         relative overflow-hidden py-4 inline-block 
+                         hover:after:w-full after:transition-left after:duration-100 after:ease
+                         relative overflow-hidden py-4 inline-block
                          `}>Projects</NavLink>
                         <NavLink to={"/repos"}
                             className={({ isActive }) => `${isActive ? 'after:w-full after:left-0' : 'after:left-2/4 hover:after:left-0'} 
-                            ${pageTheme === 'darkmode' ? 'after:bg-white' : 'after:bg-black'} leading-normal  after:content-[''] 
+                             leading-normal  after:content-[''] 
                             after:inline-block after:absolute after:h-1 after:w-0 after:bottom-0 
-hover:after:w-full after:transition-left after:duration-300 after:ease-in-out
+hover:after:w-full after:transition-left after:duration-100 after:ease
 relative overflow-hidden py-4 inline-block
 `}>Repositories</NavLink>
                     </div>
 
                     <div className="dropdown-toggler">
-                        <button className={`themeToggle p-2 ${pageTheme}`}
+                        <button className={`themeToggle p-2`}
                             onClick={() => handleTheme()}
 
                             data-name={`switch to ${pageTheme}`}>
@@ -68,8 +68,8 @@ relative overflow-hidden py-4 inline-block
             </section>
 
             <section className={`dropdown ${dropdown ?
-                pageTheme :
-                null}`}>
+                "active" :
+                'inactive'}`}>
 
                 <div >
 
@@ -78,7 +78,6 @@ relative overflow-hidden py-4 inline-block
                         <a href="projects">Projects</a>
                         <a href="/repos">Repositories</a>
                     </div>
-
 
 
                     <div>

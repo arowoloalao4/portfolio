@@ -1,7 +1,7 @@
 import React from 'react'
-import { useThemeContext } from '../../context/themeContext';
-import ProjectDescr from './projectDescr';
-import ProjectBg from './projectBg';
+import ProjectDetail from './projectDetail';
+import ProjectInformation from './projectInformation';
+
 
 export const loadProjects = () => [
     // { name: 'Da-Manager: Pioneering Digital Solutions', url: 'https://da-manager.com' },
@@ -68,17 +68,15 @@ export const loadProjects = () => [
     },
 ];
 
-const Projects = ({ }) => {
-
-    const { pageTheme } = useThemeContext()
+const Projects = () => {
     const projects = loadProjects()
 
     return (
-        <section className='description__section'>
+        <section className={`projectdescription-section`}>
             {projects.map((project, index) => (
-                <div className={`description ${pageTheme}`} key={index}>
-                    <ProjectBg project={project} />
-                    <ProjectDescr project={project} />
+                <div className={`projectdescription-container`} key={index}>
+                    <ProjectDetail project={project} />
+                    <ProjectInformation project={project} />
                 </div>
             ))}
 

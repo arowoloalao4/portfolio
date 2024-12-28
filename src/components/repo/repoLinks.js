@@ -1,5 +1,4 @@
 import React from 'react'
-import { useThemeContext } from '../../context/themeContext';
 import { Link } from 'react-router-dom';
 
 export const loadRepos = () => [
@@ -64,12 +63,10 @@ export const loadRepos = () => [
 ];
 
 const RepoLinks = () => {
-    const { pageTheme } = useThemeContext()
     const repos = loadRepos()
 
     return (
-        <section className={pageTheme === 'lightmode' ?
-            'repo-section-lightmode' : 'repo-section-darkmode'}>
+        <section className={'repo-section'}>
 
             {repos.map((git, index) => (
                 <Link to={git.link} key={index}>

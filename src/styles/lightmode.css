@@ -1,24 +1,18 @@
-.homepage {
-    padding: 0 !important;
-    min-height: 100vh;
-    overflow: hidden;
-}
-
-.homepage.lightmode {
+.layout.lightmode {
     background-color: rgb(182, 178, 178);
 }
 
-.navBar.lightmode {
+.lightmode .navBar {
     color: #000;
     background-color: rgba(65, 66, 66, 0.6);
 }
 
 
-.modeToggle.lightmode {
+.lightmode .modeToggle {
     color: inherit;
 }
 
-.modeToggle.lightmode:hover:before {
+.lightmode .modeToggle:hover:before {
     content: attr(data-name);
     position: absolute;
     bottom: -2em;
@@ -32,45 +26,49 @@
 
 }
 
-.modeToggle.lightmode:hover {
+.lightmode .modeToggle:hover {
     background-color: #3b3b3c;
     color: white
 }
 
-.toggleBurger.lightmode {
+.lightmode .toggleBurger {
     color: inherit;
 }
 
-.toggleBurger.lightmode:hover {
+.lightmode .toggleBurger:hover {
     color: white;
     background-color: #3b3b3c;
+}
+
+.lightmode .navlink a::after {
+    background-color: black;
 }
 
 @media (max-width:768px) {
 
     .togglebtn-lightmode,
     .canceltogglebtn-lightmode,
-    .navBar.lightmode section a:first-of-type {
+    .lightmode .navBar section a:first-of-type {
         display: inline-block;
     }
 
-    .togglebtn.lightmode {
+    .lightmode .togglebtn {
         color: black;
     }
 
-    .togglebtn.lightmode:hover {
+    .lightmode .togglebtn:hover {
         background-color: #3b3b3c;
     }
 
-    .dropdown.lightmode {
+    .lightmode .dropdown {
         background-color: rgba(38, 39, 39, 0.9);
     }
 
-    .dropdown.lightmode {
+    .lightmode .dropdown {
         top: 0;
     }
 
-    .dropdown.lightmode a:hover {
+    .lightmode .dropdown a:hover {
         text-decoration: underline;
         background-color: rgba(233, 238, 243, 0.1);
     }
@@ -103,415 +101,155 @@ img {
     border-radius: 3%;
 }
 
-.projects__section {
+.header-container {
     text-align: center;
     padding: 2em 0;
 }
 
-.projects__section p,
-.about-section p {
+.lightmode .hero-section {
+    color: black;
+}
+
+.lightmode .header-section h2 {
+    color: black;
+}
+
+.lightmode .header-section p {
+    color: rgb(35, 34, 34);
+}
+
+.header-container p {
     font-size: 1.3rem;
     font-weight: lighter;
     padding: 0 .7em;
 }
 
-.about-section.lightmode h2,
-.projects__section.lightmode h2 {
-    font-size: 4rem;
-    font-weight: 500;
+.lightmode .descriptionbar-container {
+    background-color: rgb(134, 131, 131)
+}
+
+.lightmode .descriptionbar-container {
     color: black;
-    padding: 0 .23em;
 }
 
-.about-section.lightmode p,
-.projects__section.lightmode p {
-    color: rgb(35, 34, 34);
-}
-
-.about-section.lightmode>div:last-of-type {
-    width: 40%;
-    margin: 0 .3rem;
-    color: white;
-}
-
-
-
-@media (max-width:992px) {
-    .about-section.lightmode {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 5rem 0;
-    }
-
-    .about-section.lightmode div:first-of-type {
-        width: 30%;
-        height: 12rem;
-    }
-
-    .about-section.lightmode div:last-of-type {
-        text-align: center;
-        width: 80%;
-    }
-
-    img {
-        width: 100%;
-        height: 100%;
-        border-radius: 3%;
-    }
-
-}
-
-
-.intro__section.lightmode {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 3rem;
-}
-
-.intro__section.lightmode div:first-of-type {
-    height: 1rem;
-    width: 70%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: rgb(134, 131, 131);
-    border-top-right-radius: .8rem;
-    border-top-left-radius: .8rem;
-    padding: .9rem;
-}
-
-.intro__section.lightmode div:last-of-type {
-    height: 37rem;
-    width: 70%;
+.lightmode .selfdescription-section {
     background-color: rgba(71, 69, 69, 0.7);
-    padding: .7rem .9em;
-    font-size: 1.17rem;
-    border-radius: .8rem;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
-    overflow: hidden;
 }
 
-.intro__section.lightmode div span:nth-of-type(2) {
-    color: black;
-    font-weight: bolder;
-}
-
-.normal-lightmode {
+.lightmode .selfdescription-section {
     color: rgb(27, 25, 25);
-    font-weight: bold;
 }
 
+/* projects page */
 
-.description-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-}
-
-.radioone {
-    color: rgb(248, 106, 106);
-    background-color: rgb(248, 106, 106);
-    border-radius: 50%;
-    margin: 0 .2em;
-}
-
-.radiotwo {
-    color: orange;
-    background-color: orange;
-    border-radius: 50%;
-    margin: 0 .2em;
-}
-
-.radiothree {
-    color: green;
-    background-color: green;
-    border-radius: 50%;
-    margin: 0 .2em;
-}
-
-.projects__description.lightmode {
+.lightmode .projectinfo-section {
     background-color: white;
 }
 
-.description.lightmode:nth-of-type(2n) {
+.lightmode .projectdescription-container:nth-of-type(2n) {
     background: linear-gradient(45deg, #548a98, #19262c, #627484);
 }
 
-.description.lightmode:nth-of-type(2n-1) {
+.lightmode .projectdescription-container:nth-of-type(2n-1) {
     background: linear-gradient(45deg, #627484, #19262c, #548a98);
 }
 
-@media (max-width: 992px) {
 
-    .intro__section.lightmode {
-        padding: .3rem 0;
-    }
-
-    .intro__section.lightmode div:first-of-type {
-        display: flex;
-        align-items: center;
-    }
-
-    .intro__section.lightmode div:last-of-type {
-        height: 40rem;
-        width: 70%;
-        padding: .7rem .9em;
-        color: white;
-        font-size: 1.17rem;
-        border-radius: .8rem;
-        border-top-right-radius: 0;
-        border-top-left-radius: 0;
-    }
-
-    .description-lightmode:first-of-type {
-        margin-top: 2rem;
-        margin-bottom: 9rem
-    }
-
-    .description-lightmode {
-        transform: translateX(0);
-        border-bottom-left-radius: 0;
-        border-bottom-right-radius: 0;
-        margin: 9rem 0;
-        width: 90%;
-        padding: 4em 3em;
-    }
-
-    .description-lightmode:last-of-type {
-        margin-bottom: 18rem;
-    }
-
-    .projects-background-lightmode {
-        width: 100%;
-    }
-
-    .description-lightmode:nth-of-type(2n-1) {
-        background: linear-gradient(45deg, #627484, #19262c, #548a98);
-    }
-
-    .description-lightmode:nth-of-type(2n) {
-        background: linear-gradient(45deg, #548a98, #19262c, #627484);
-    }
-
-    .projects__description.lightmode {
-        border-bottom-left-radius: 0.7rem;
-        border-bottom-right-radius: 0.7rem;
-        border-top-left-radius: 0;
-        border-top-right-radius: 0;
-        position: absolute;
-        bottom: -13em;
-        left: 0;
-        width: 100%;
-    }
-
-}
-
-.projects__description.lightmode p {
-    color: black;
-    font-weight: light;
-    padding: .3em 0;
-    font-size: 95%;
-}
-
-.projects__description.lightmode h4 {
-    display: inline;
-    font-weight: bold;
+.lightmode .projectinfo-section {
     color: black;
 }
 
-.projects__description.lightmode:hover {
+.lightmode .projectinfo-section:hover {
     background-color: rgba(255, 255, 255, .8);
 }
 
-.project__link {
-    font-size: 1.3rem;
-    color: #6da3b1;
-    transition: color ease-in-out 200ms;
+
+/* repo page */
+
+.lightmode .repo-section a {
+    background-color: white;
+    border: 1px solid rgba(44, 43, 43, 0.6);
+    color: black;
 }
 
-.projects__description:hover .project__link {
-    color: rgba(109, 163, 177, .9);
+.lightmode .repo-section a:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 1px 3px -1px rgb(24, 24, 24);
 }
 
-.projects__description.lightmode div:nth-of-type(1) {
+
+/* footer section */
+
+.footer-section {
+    margin: 0% !important;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1em;
+    align-items: center;
+    transition: all ease .1ms;
+}
+
+.lightmode .footer-section {
+    background-color: rgb(26, 27, 27);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.lightmode .footer-section a svg {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-section a svg {
+    border-radius: 50%;
+    padding: .2rem;
+    margin: 0 .6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-section>div:last-child a:hover::before {
+    content: attr(data-name);
+    position: absolute;
+    top: -20px;
+    border-radius: .3125rem;
+    display: inline-block;
+    font-size: .9rem;
+    padding: .08rem .3rem;
+}
+
+.lightmode .footer-section>div:last-child a:hover::before {
+    background-color: #414143;
+    color: #fff;
+}
+
+.footer-section>div {
     display: flex;
     flex-direction: row;
-    align-items: normal;
-    justify-content: space-between;
-}
-
-.projects__description.lightmode div:nth-of-type(2) {
-    display: flex;
+    justify-content: space-around;
     align-items: center;
-    justify-content: flex-start;
 }
 
-.projects__description.lightmode span {
-    border-radius: .4rem;
-    padding: .2em .5em;
-    font-size: 1em;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 .1em;
+.lightmode .footer-section>div:last-child a svg {
+    color: #212121;
 }
-
 
 @media(min-width: 768px) {
 
-    .repo-section-lightmode a {
-        background-color: white;
-        border: 1px solid rgba(44, 43, 43, 0.6);
-        color: black;
+    .lightmode .repo-section a {
         margin: 1.5rem;
-        padding: 1.3rem;
-        width: 40%;
-        border-radius: .5rem;
-        transition: all ease-in-out .2s;
-        text-decoration: none;
     }
 
-    .footer-lightmodesection {
-        margin: 0% !important;
-        position: relative;
-        display: flex;
-        justify-content: space-evenly;
-        background-color: rgb(26, 27, 27);
-        padding: 1em;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer-lightmodesection div {
-        display: flex;
+    .footer-section {
         flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    .footer-lightmodesection div a {
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 50%;
-        padding: .2rem;
-        margin: 0 .6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .footer-lightmodesection div:last-child .lightmode-link {
-        color: #212121;
-    }
-
-    .footer-lightmodesection div:last-child a:hover::before {
-        content: attr(data-name);
-        position: absolute;
-        top: -20px;
-        background-color: #414143;
-        color: #fff;
-        border-radius: .3125rem;
-        display: inline-block;
-        font-size: .9rem;
-        padding: .08rem .3rem;
     }
 
 }
 
 @media(max-width: 768px) {
-
-    .intro__section.lightmode {
-        display: none;
-    }
-
-    .repo-section-lightmode {
-        display: flex;
+    .footer-section {
         flex-direction: column;
-        justify-content: space-evenly;
-        align-items: center;
-        padding: 2.5rem 0;
+        gap: 10px;
     }
 
-    .repo-section-lightmode a {
-        background-color: rgb(3, 15, 28);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        color: white;
-        margin: 1.5rem;
-        padding: 1.3rem;
-        width: 90%;
-        border-radius: .5rem;
-        transition: all ease-in-out .2s;
-        text-decoration: none;
-        text-align: center;
-    }
-
-    .footer-lightmodesection {
-        margin: 0% !important;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        background-color: rgb(26, 27, 27);
-        padding: 1em;
-        align-items: center;
-        color: rgba(255, 255, 255, 0.7);
-    }
-
-    .footer-lightmodesection div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-around;
-        align-items: center;
-        margin: .3rem;
-    }
-
-    .footer-lightmodesection div a {
-        background-color: rgba(255, 255, 255, 0.7);
-        border-radius: 50%;
-        padding: .2rem;
-        margin: 0 .6rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .footer-lightmodesection div:last-child .lightmode-link {
-        color: #212121;
-    }
-
-    .footer-lightmodesection div:last-child a:hover::before {
-        content: attr(data-name);
-        position: absolute;
-        top: -20px;
-        background-color: #626264;
-        color: #fff;
-        border-radius: .3125rem;
-        font-size: .9rem;
-        padding: .08rem .3rem;
-    }
-
-}
-
-.repo-section-lightmode {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 1rem 0;
-}
-
-.repo-section-lightmode a:hover {
-    transform: translateY(-5px);
-    box-shadow: 0px 1px 3px -1px rgb(24, 24, 24);
-}
-
-.repo-section-lightmode a span:first-of-type {
-    font-size: 1.5rem;
-    font-weight: bold;
-    display: block;
 }

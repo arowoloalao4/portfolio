@@ -1,15 +1,13 @@
 import React from 'react'
-import { useThemeContext } from '../context/themeContext'
 
-const Header = ({ h2, p }) => {
+const Header = ({ h2 = null, p = null }) => {
 
-    const { pageTheme } = useThemeContext()
-
-    return (<section className={`projects__section ${pageTheme === 'lightmode' ?
-        'lightmode' : 'darkmode'}`}>
-        {h2 && <h2>{h2}</h2>}
-        <p>{p}</p>
-    </section>)
+    return (<section className={`header-section`}>
+        <div className='header-container'>
+            <h2>{h2}</h2>
+            <p>{p}</p>
+        </div>
+    </section >)
 }
 
 export default Header

@@ -9,8 +9,7 @@ const Footer = () => {
 
     const { pageTheme } = useThemeContext()
 
-    return (<div className={pageTheme === 'lightmode' ?
-        'footer-lightmodesection' : 'footer-darkmodesection'}>
+    return (<div className={'footer-section'}>
         <div>
             <FaCode size={19} className={pageTheme === 'lightmode' ?
                 "lightmode-link" : 'darkmode-link me-2'} />

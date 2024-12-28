@@ -1,17 +1,16 @@
 import './styles/darkmode.css';
 import './styles/lightmode.css'
-import { Outlet } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { ThemeContext } from './context/themeContext';
-import { DescriptionProvider } from './context/userContext';
-
+import { AboutMeProvider } from './context/userContext';
+import Layout from '../src/pages/layout'
 function App() {
 
   return (
     <ThemeContext>
-      <DescriptionProvider>
-        <Outlet />
-      </DescriptionProvider>
+      <AboutMeProvider>
+        <Layout />
+      </AboutMeProvider>
     </ThemeContext >);
 }
 
