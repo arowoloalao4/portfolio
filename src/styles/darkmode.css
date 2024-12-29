@@ -323,6 +323,7 @@
   .hero-content>div:first-of-type {
     width: 30%;
     height: 12rem;
+    margin-bottom: 1rem;
   }
 
   .hero-content>div:last-of-type {
