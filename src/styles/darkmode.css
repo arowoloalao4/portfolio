@@ -501,10 +501,12 @@
 }
 
 .darkmode .projectdescription-container:nth-of-type(2n) {
+  position: relative;
   background: linear-gradient(45deg, #548a98, #19262c, #627484);
 }
 
 .darkmode .projectdescription-container:nth-of-type(2n-1) {
+  position: relative;
   background: linear-gradient(45deg, #627484, #19262c, #548a98);
 }
 
@@ -523,15 +525,21 @@
 
 .projectinfo-section p {
   margin: 0;
-  font-weight: light;
+  font-weight: lighter;
   padding: .3em 0;
   font-size: 16px;
   line-height: normal;
 }
 
-.projectinfo-section h4 {
+.projectinfo-section h1 {
   display: inline;
   font-weight: bold;
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-wrap: nowrap;
+  text-overflow: ellipsis;
 }
 
 .project-link {
@@ -549,6 +557,7 @@
   flex-direction: row;
   align-items: normal;
   justify-content: space-between;
+  margin-bottom: .3rem;
 }
 
 .projectinfo-container>div:nth-of-type(2) {
@@ -597,11 +606,17 @@
   }
 
   .projectdescription-container:nth-of-type(2n-1) .projectinfo-section {
+    transform: translateX(10%);
+    transform: translateY(-50%);
     left: -35%;
+    top: 50%;
   }
 
   .projectdescription-container:nth-of-type(2n) .projectinfo-section {
+    transform: translateX(-10%);
+    transform: translateY(-50%);
     right: -35%;
+    top: 50%;
   }
 
   .inner-description {

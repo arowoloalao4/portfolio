@@ -12,9 +12,9 @@ const ProjectInformation = memo(function ({ project }) {
 
         <Link className='projectinfo-container' to={url}>
             <div>
-                <h4>
+                <h1>
                     {name}
-                </h4>
+                </h1>
                 <span className='text-white' >
                     <FaExternalLinkAlt className='project-link' />
                 </span>
