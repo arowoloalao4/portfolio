@@ -4,10 +4,8 @@ import MainSection from "../components/homepage/main";
 
 const HomePage = () => {
 
-
     return (<Container fluid>
         <MainSection />
-    </Container >
-    )
+    </Container >)
 }
 export default HomePage;
