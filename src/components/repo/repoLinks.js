@@ -6,7 +6,6 @@ export const loadRepos = () => [
         title: 'Bookstore Application',
         link: 'https://github.com/Ollah16/bookstore.git'
     },
-
     {
         title: 'AI Journey Application',
         link: 'https://github.com/Ollah16/tripbuddy.git'
@@ -20,7 +19,7 @@ export const loadRepos = () => [
         link: 'https://github.com/Ollah16/invoice-app.git'
     },
     {
-        title: 'School Application',
+        title: 'College Application',
         link: 'https://github.com/Ollah16/react-school-portal.git'
     },
     {
