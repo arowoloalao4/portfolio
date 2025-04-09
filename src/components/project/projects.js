@@ -9,13 +9,13 @@ export const loadProjects = () => [
     {
         name: 'Tradex Application',
         url: 'https://trade-x-omega.vercel.app/',
-        description: "Developed a crypto converter with React.js and Node.js.",
+        description: "Developed a cryptocurrency converter with React.js and Node.js.",
         image: require('../../assets/tradexapp.png')
     },
     {
         name: 'Journey AI Application',
         url: 'https://tripbuddy-phi.vercel.app/',
-        description: "Developed a journey AI buddy for children with next.js.",
+        description: "A journey AI buddy for children with built with next.js.",
         image: require('../../assets/journeybuddy.png')
     },
     {
@@ -27,13 +27,13 @@ export const loadProjects = () => [
     {
         name: 'Bookstore Application',
         url: 'https://bookstoreapp-389b8.web.app',
-        description: 'Crafted a bookstore app with React.js, Redux, Node.js, MongoDB for seamless book additions.',
+        description: 'Performant bookstore app crafted with React.js, Redux, Node.js, MongoDB for seamless book additions.',
         image: require('../../assets/bookstore.png')
     },
     {
-        name: 'School Application',
+        name: 'College Application',
         url: 'https://school-app-e4abd.web.app',
-        description: 'Developed a scalable school portal with React.js, Redux, Node.js, and MongoDB.',
+        description: 'Developed a scalable college portal with React.js, Redux, Node.js, and MongoDB.',
         image: require('../../assets/schoolapp.png')
     },
     {
@@ -41,6 +41,12 @@ export const loadProjects = () => [
         url: 'https://invoice-app-6a126.web.app',
         description: 'Built an invoice app with React.js, Redux, Node.js, and MYSQL. Responsive design.',
         image: require('../../assets/invoiceapp.png')
+    },
+    {
+        name: 'Battery Monitoring Dashboard',
+        url: 'https://batterydashboard.vercel.app/',
+        description: 'The dashboard provides real-time battery status, charge level, and historical data visualization using Recharts and Framer Motion for smooth animations.',
+        image: require('../../assets/batterydashboard.png')
     },
     {
         name: 'Cofounderslab Application',
@@ -63,7 +69,7 @@ export const loadProjects = () => [
     {
         name: 'Portfolio Application',
         url: 'https://myportfolio-8bb3f.web.app',
-        description: 'Built a standout portfolio with React.js, HTML5, and CSS for an engaging user experience.',
+        description: 'A standout portfolio developed with React.js, HTML5, and CSS for an engaging user experience.',
         image: require('../../assets/portfolio.png')
     },
 ];
