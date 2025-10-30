@@ -53,13 +53,14 @@ export const AboutMeProvider = ({ children }) => {
         let timeout;
         let fullDescription = `
         \n> self.currentLocation
-         United Kingdom
+        ["Dallas, Texas"]
         \n> self.education
         ["MSc Engineering Management, 2022-2023", "B.Tech Agricultural Engineering, 2012-2020"]
         \n> self.techStack
-        ["HTML", "CSS", "Javascript", "Typescript", "Php", "React.js", "Next.js", "Vue", "Nuxt.js", "Angular", "Redux", "Bootstrap", "Tailwind", "MUI", "Node.js", "Express", "MySQL", "NoSQL", "Git", "GitHub", "Vercel", "Firebase", "AWS", ...rest]
+        ["HTML", "CSS", "Javascript", "Typescript", "React.js", "Next.js", "Redux", "Jotai", "Tailwind", "Playwright", "Jest", "Node.js", "Git", "GitHub", "Vercel", "Firebase", "AWS", ...rest]
         \n> self.contactMe( )
-        ["LinkedIn", "Github", "Twitter/X", "Instagram", "Discord", "Telegram", "Email"]`
+        ["Github","Email"]`
+
 
         const provideDescription = (event) => {
             if (event?.key === 'Enter') {

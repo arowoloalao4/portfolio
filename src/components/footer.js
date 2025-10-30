@@ -17,14 +17,14 @@ const Footer = () => {
         </div>
 
         <div>
-            <Link to={'mailto:olaoluwa_oke@outlook.com'}
+            <Link to={'mailto:arowoloalao4@gmail.com'}
                 data-name="Email">
                 <MdOutlineMail size={19} className={pageTheme === 'lightmode' ?
                     "lightmode-link" : 'darkmode-link'}
                 />
             </Link>
 
-            <Link to={'https://github.com/Ollah16/'}
+            <Link to={'https://github.com/arowoloalao4'}
                 data-name="GitHub">
                 <FaGithubSquare size={19} className={pageTheme === 'lightmode' ?
                     "lightmode-link" : 'darkmode-link'} />
