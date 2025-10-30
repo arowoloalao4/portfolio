@@ -4,59 +4,55 @@ import { Link } from 'react-router-dom';
 export const loadRepos = () => [
     {
         title: 'Bookstore Application',
-        link: 'https://github.com/Ollah16/bookstore.git'
+        link: 'https://github.com/arowoloalao4/bookstore'
     },
     {
         title: 'AI Journey Application',
-        link: 'https://github.com/Ollah16/tripbuddy.git'
+        link: 'https://github.com/arowoloalao4/tripbuddy'
     },
     {
         title: 'Inventory Application',
-        link: 'https://github.com/Ollah16/app_inventory.git'
+        link: 'https://github.com/arowoloalao4/inventoryApp'
+    },
+    {
+        title: 'Battery Dashboard',
+        link: 'https://github.com/arowoloalao4/batterydashboard'
     },
     {
         title: 'Invoice Application',
-        link: 'https://github.com/Ollah16/invoice-app.git'
+        link: 'https://github.com/arowoloalao4/invoiceapp'
     },
     {
         title: 'College Application',
-        link: 'https://github.com/Ollah16/react-school-portal.git'
-    },
-    {
-        title: 'Exchange Application',
-        link: 'https://github.com/Ollah16/currencyXchange.git'
-    },
-    {
-        title: 'Todo Application',
-        link: 'https://github.com/Ollah16/todoApp.git'
+        link: 'https://github.com/arowoloalao4/schooldashboard'
     },
     {
         title: 'Portfolio Application',
-        link: 'https://github.com/Ollah16/myPortfolio.git'
+        link: 'https://github.com/arowoloalao4/portfolio'
     },
     {
         title: 'School Server',
-        link: 'https://github.com/Ollah16/reactSchoolAppBackEnd.git'
+        link: 'https://github.com/arowoloalao4/schooldashboardBE'
     },
     {
         title: 'Inventory Server',
-        link: 'https://github.com/Ollah16/inventoryBE.git'
+        link: 'https://github.com/arowoloalao4/inventoryAppBE'
     },
     {
         title: 'Bookstore Server',
-        link: 'https://github.com/Ollah16/bookStoreBackEnd.git'
+        link: 'https://github.com/arowoloalao4/bookstoreBE'
     },
     {
         title: 'Invoice Server',
-        link: 'https://github.com/Ollah16/invoiceBackEnd.git'
+        link: 'https://github.com/arowoloalao4/invoiceBE'
     },
     {
         title: 'Tradex Application',
-        link: 'https://github.com/Ollah16/tradeX.git'
+        link: 'https://github.com/arowoloalao4/tradex'
     },
     {
         title: 'Tradex Server',
-        link: 'https://github.com/Ollah16/tradeXserver.git'
+        link: 'https://github.com/arowoloalao4/tradexserver'
     }
 
 ];
